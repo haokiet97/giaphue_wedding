@@ -164,4 +164,6 @@ export class EventComponent {
             // this.sendMail(daysDifference.toString());
         }
     }
+
+  protected readonly EVENT_DATA = EVENT_DATA;
 }

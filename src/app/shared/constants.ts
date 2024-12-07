@@ -59,6 +59,7 @@ export const CAROUSEL_DATA = {
 }
 // Thông tin địa điểm thời gian sự kiện
 export const EVENT_DATA = {
+    quote: 'Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá.',
     maleData:{
       image: 'https://lh3.googleusercontent.com/pw/AP1GczO38uVfn03mbRIyf33BWyCuAirKFzrI7ow8uqrBr4qCoZ9QlFZaMijNd4X0dmN0f51BKrGeXs9epSPO1w-lMM3N-mb-gD8QntKVqX1t_WCstOuo2of6OENbS0rGjX46PjnAT_RkjmfF7SIQcvwKnj4=w619-h929-s-no-gm',
       location: 'Tư gia gia đình Nam Hương',
@@ -73,4 +74,24 @@ export const EVENT_DATA = {
     dateStr: '04-05/02/2025',
     dateLunarStr: '07-08/01/2025',
   },
+}
+
+export const STORY_DATA = {
+  quote: 'Hãy để tình yêu diễn biến thật tự nhiên, đã là duyên thì xa đến mấy cũng chẳng sợ lạc đường',
+  title: 'Chuyện tình yêu chúng mình',
+  desc: 'Mình là chú rể Mạnh Tuấn, sau đây mình xin kể cho các bạn nghe về chuyện tình yêu của chúng mình',
+  timelines: [
+    {
+      title: 'Lần ngặp mặt đầu tiên',
+      date: '15/04/2022',
+      desc: `desc 1`,
+      image: 'assets/img/tuanhuyen/story/1.jpg'
+    },
+    {
+      title: 'Lần ngặp mặt đầu tiên2',
+      date: '15/05/2022',
+      desc: 'desc2',
+      image: 'assets/img/tuanhuyen/story/2.jpg'
+    }
+  ]
 }
