@@ -110,3 +110,7 @@ export const MONEY_DATA = {
     qr_image: "assets/img/bank/huyen-bank.jpg"
   }
 }
+
+export const GALLERY_DATA = {
+
+}
