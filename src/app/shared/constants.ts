@@ -34,3 +34,8 @@ export const MALE_ABOUT = 'Chú rể Mạnh Tuấn là một lập trình viên 
 export const FEMALE_ABOUT = 'Cô dâu Khánh Huyền đang làm việc tại phòng vé Minh Trang Travel. Là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chú rể Mạnh Tuấn.';
 
 export const SECRET_KEY = 'tuanhuyen_wedding';
+
+export const CAROUSEL_DATA = {
+  images: ["assets/img/tuanhuyen/bg-cover.jpg", "assets/img/tuanhuyen/bg-cover2.jpg"],
+  video: "https://www.youtube.com/embed/_shTSNNBpmE?si=neQpum3B4cT6QS34"
+}
