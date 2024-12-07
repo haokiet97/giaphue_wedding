@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MONEY_DATA} from "../../../shared/constants";
 
 @Component({
   selector: 'app-money',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class MoneyComponent {
 
+  protected readonly MONEY_DATA = MONEY_DATA;
 }

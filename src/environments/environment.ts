@@ -1,12 +1,12 @@
 export const environment = {
     production: false,
     firebase: {
-        apiKey: "AIzaSyBOcyypzn8vyDW6Mm4-eWlgPnMPeL9KGHM",
-        authDomain: "tuanhuyen-wedding.firebaseapp.com",
-        projectId: "tuanhuyen-wedding",
-        storageBucket: "tuanhuyen-wedding.appspot.com",
-        messagingSenderId: "871811499542",
-        appId: "1:871811499542:web:30f26956749c491b299737",
-        measurementId: "G-QYESXZEKM8"
+      apiKey: "AIzaSyAq88jhoHRuiciSFYgZWIj8vqRmWEkGUmc",
+      authDomain: "giaphue-wedding.firebaseapp.com",
+      projectId: "giaphue-wedding",
+      storageBucket: "giaphue-wedding.firebasestorage.app",
+      messagingSenderId: "835409367787",
+      appId: "1:835409367787:web:1b5699eda5d566dfb464ae",
+      measurementId: "G-QRNXT5DHKT"
       }
   };

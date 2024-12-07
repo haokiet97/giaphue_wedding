@@ -95,3 +95,18 @@ export const STORY_DATA = {
     }
   ]
 }
+
+export const MONEY_DATA = {
+  maleData: {
+    bank: "MB Bank",
+    account_name: "Nguyễn Văn Giáp",
+    account: "0388966276",
+    qr_image: "assets/img/bank/tuan-bank.jpg"
+  },
+  femaleData: {
+    bank: "MB Bank",
+    account_name: "Hoàng Thanh Kim Huệ",
+    account: "0336135208",
+    qr_image: "assets/img/bank/huyen-bank.jpg"
+  }
+}
