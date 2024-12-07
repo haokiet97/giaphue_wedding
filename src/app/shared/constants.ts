@@ -9,7 +9,7 @@ export const GG_MAP_MALE = 'https://maps.app.goo.gl/Bt6NfSEqjiQGjywYA';
 
 export const GG_MAP_FEMALE = 'https://maps.app.goo.gl/Ga5wz15S43QsBcAW8';
 
-export const DATE_COUNT_DOWN = '2024/03/24';
+export const DATE_COUNT_DOWN = '2025/02/07';
 
 export const EVENT_INFO_MALE = {
     UID: 'male_wedding_id',
@@ -24,5 +24,13 @@ export const EVENT_INFO_FEMALE = {
     END_TIME: '20240317T235900',
     LOCATION: 'Tùng Châu - Đức Thọ - Hà Tĩnh'
 };
+
+export const MALE_NAME = 'Giáp';
+export const MALE_FULL_NAME = 'Nguyễn Giáp';
+export const FEMALE_FULL_NAME = 'Kim Huệ';
+export const FEMALE_NAME = 'Huệ';
+
+export const MALE_ABOUT = 'Chú rể Mạnh Tuấn là một lập trình viên đang công tác tại ngân hàng MB. Một người hiền lành, sống tình cảm và luôn yêu thương gia đình.';
+export const FEMALE_ABOUT = 'Cô dâu Khánh Huyền đang làm việc tại phòng vé Minh Trang Travel. Là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chú rể Mạnh Tuấn.';
 
 export const SECRET_KEY = 'tuanhuyen_wedding';

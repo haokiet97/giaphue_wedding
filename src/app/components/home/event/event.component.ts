@@ -33,6 +33,7 @@ export class EventComponent {
     now: any;
     targetDateInput: any = DATE_COUNT_DOWN;
     targetDate: any;
+    targetDateDisplay: any;
     targetTime: any;
     difference: any;
 
@@ -47,6 +48,7 @@ export class EventComponent {
         if (!this.isAfter) {
             this.targetDate = new Date(this.targetDateInput?.toString());
             this.targetTime = this.targetDate.getTime();
+            this.targetDateDisplay = moment(this.targetDateInput, 'YYYY-MM-DD').format('DD/MM/YYYY');
 
             setInterval(() => {
                 this.tickTock();

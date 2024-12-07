@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FEMALE_FULL_NAME, MALE_FULL_NAME} from "../../../shared/constants";
 
 @Component({
   selector: 'app-navbar',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  protected readonly MALE_FULL_NAME = MALE_FULL_NAME;
+  protected readonly FEMALE_FULL_NAME = FEMALE_FULL_NAME;
 }
