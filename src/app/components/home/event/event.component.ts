@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CalendarService } from '../../../services/calendar.service';
 import {
-    DATE_COUNT_DOWN,
-    EVENT_INFO_FEMALE,
-    EVENT_INFO_MALE,
-    GG_MAP_FEMALE,
-    GG_MAP_MALE,
-    OPERATION_SYSTEM
+  DATE_COUNT_DOWN, EVENT_DATA,
+  EVENT_INFO_FEMALE,
+  EVENT_INFO_MALE,
+  GG_MAP_FEMALE,
+  GG_MAP_MALE,
+  OPERATION_SYSTEM
 } from '../../../shared/constants';
 import Utils from '../../../shared/utils';
 import moment from 'moment';
@@ -41,6 +41,9 @@ export class EventComponent {
     hours: any = 0;
     minutes: any = 0;
     seconds: any = 0;
+
+    protected  readonly maleEventData = EVENT_DATA.maleData;
+    protected  readonly femaleEventData = EVENT_DATA.femaleData;
 
     ngAfterViewInit() {
         this.calculateDateTarget();

@@ -30,12 +30,47 @@ export const MALE_FULL_NAME = 'Nguyễn Giáp';
 export const FEMALE_FULL_NAME = 'Kim Huệ';
 export const FEMALE_NAME = 'Huệ';
 
-export const MALE_ABOUT = 'Chú rể Mạnh Tuấn là một lập trình viên đang công tác tại ngân hàng MB. Một người hiền lành, sống tình cảm và luôn yêu thương gia đình.';
-export const FEMALE_ABOUT = 'Cô dâu Khánh Huyền đang làm việc tại phòng vé Minh Trang Travel. Là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chú rể Mạnh Tuấn.';
+export const ABOUT_DATA = {
+  maleData: {
+    image: 'assets/img/tuanhuyen/tuan.jpg',
+    desc: 'Chú rể là một lập trình viên đang công tác tại ngân hàng MB. Một người hiền lành, sống tình cảm và luôn yêu thương gia đình.',
+    fb: 'https://www.facebook.com/giaplinux/',
+    zl: '',
+    ins: '',
+    tel: '0388966276'
+  },
+  femaleData: {
+    image: 'assets/img/tuanhuyen/huyen.jpg',
+    desc: 'Cô dâu đang làm việc tại phòng vé Minh Trang Travel. Là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chú rể Mạnh Tuấn.',
+    fb: '',
+    zl: '',
+    ins: '',
+    tel: '0336135208'
+  }
+}
 
 export const SECRET_KEY = 'tuanhuyen_wedding';
 
 export const CAROUSEL_DATA = {
-  images: ["assets/img/tuanhuyen/bg-cover.jpg", "assets/img/tuanhuyen/bg-cover2.jpg"],
+  images: [
+    "https://lh3.googleusercontent.com/pw/AP1GczNcKudpCuMlbEs8Vs3thAmJZ5X1cP6UjhwBQ07bZ0CBPCVCn97E0b4xsBs6tRwc5r6PMHb_J20-xMATm71NNdX2R5WoPtI5bHvVu_dylzieMuo2Yd2lVoU_h5432ZENiN9kl5dzlcZ4q0JZHO9S41Q=w619-h929-s-no-gm",
+    "https://lh3.googleusercontent.com/pw/AP1GczOerZKvSryWBF7cWXr_9meAVcsfFyx-chMFjP-idiABNlaH2yLbDQSvn-I_IDdShf3ac2xVzFsvfDp5XEDIEGRVHSpzut5XxGVV1rdO1GjLd6RDaKNZq5Y4Z7QujJk1xFVo_nXw-K4JXpN8Se4uY6I=w619-h929-s-no-gm"],
   video: "https://www.youtube.com/embed/_shTSNNBpmE?si=neQpum3B4cT6QS34"
+}
+// Thông tin địa điểm thời gian sự kiện
+export const EVENT_DATA = {
+    maleData:{
+      image: 'https://lh3.googleusercontent.com/pw/AP1GczO38uVfn03mbRIyf33BWyCuAirKFzrI7ow8uqrBr4qCoZ9QlFZaMijNd4X0dmN0f51BKrGeXs9epSPO1w-lMM3N-mb-gD8QntKVqX1t_WCstOuo2of6OENbS0rGjX46PjnAT_RkjmfF7SIQcvwKnj4=w619-h929-s-no-gm',
+      location: 'Tư gia gia đình Nam Hương',
+      address: 'Khu 13, Hiền Lương, Hạ Hòa, Phú Thọ',
+      dateStr: '06-07/02/2025',
+      dateLunarStr: '09-10/01/2025',
+    },
+  femaleData:{
+    image: 'https://lh3.googleusercontent.com/pw/AP1GczNMFIwZ6SE9Bo_4DurO3x0AEj10ytXr8_REiQuZPj7usnruU78ze598dptRM2NiCJmSjIN8b7R_HU7E-sgL7QRLgy2OgMRZei4M5sQThu_y5jQCQug7qm6WuOvye19QgN5RNWOT-8RbzDFiGlVEx_o=w619-h929-s-no-gm',
+    location: 'Tư gia gia đình Thành Nhung',
+    address: 'Xóm 8, Bồi Sơn, Đô Lương, Nghệ An',
+    dateStr: '04-05/02/2025',
+    dateLunarStr: '07-08/01/2025',
+  },
 }

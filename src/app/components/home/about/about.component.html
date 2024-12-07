@@ -11,19 +11,19 @@
             <div class="col-md-6 p-0 text-center text-md-right">
                 <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
                     <h3 class="mb-3">Chú Rể</h3>
-                    <p>{{MALE_ABOUT}}</p>
+                    <p>{{ABOUT_DATA.maleData.desc}}</p>
                     <h3 class="font-secondary font-weight-normal text-muted mb-3">
                         <i class="fa fa-male text-primary pr-3"></i>{{MALE_FULL_NAME}}
                     </h3>
                     <div class="position-relative">
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://www.facebook.com/tuanvm197/" target="_blank"
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.maleData.fb}}" target="_blank"
                             ><i class="fab fa-facebook-f"></i
                         ></a>
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://zalo.me/0377560590" target="_blank">Zalo</a>
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://www.facebook.com/tuanvm197/" target="_blank"
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.maleData.zl}}" target="_blank">Zalo</a>
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.maleData.ins}}" target="_blank"
                             ><i class="fab fa-instagram"></i
                         ></a>
-                        <a class="btn btn-outline-primary btn-square" href="tel:0377560590"
+                        <a class="btn btn-outline-primary btn-square" href="tel:{{ABOUT_DATA.maleData.tel}}"
                             ><i class="fa fa-mobile-alt"></i
                         ></a>
                     </div>
@@ -33,7 +33,7 @@
                 <!-- <img class="position-absolute w-100 h-100" src="assets/img/about-1.jpg" style="object-fit: cover;"> -->
                 <img
                     class="position-absolute w-100"
-                    src="assets/img/tuanhuyen/tuan.jpg"
+                    src="{{ABOUT_DATA.maleData.image}}"
                 />
             </div>
         </div>
@@ -42,26 +42,26 @@
                 <!-- <img class="position-absolute w-100 h-100" src="assets/img/about-2.jpg" style="object-fit: cover;"> -->
                 <img
                     class="position-absolute w-100 h-100"
-                    src="assets/img/tuanhuyen/huyen.jpg"
+                    src="{{ABOUT_DATA.femaleData.image}}"
                     style="object-fit: cover"
                 />
             </div>
             <div class="col-md-6 p-0 text-center text-md-left">
                 <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
                     <h3 class="mb-3">Cô dâu</h3>
-                    <p>{{FEMALE_ABOUT}}</p>
+                    <p>{{ABOUT_DATA.femaleData.desc}}</p>
                     <h3 class="font-secondary font-weight-normal text-muted mb-3">
                         <i class="fa fa-female text-red pr-3"></i>{{FEMALE_FULL_NAME}}
                     </h3>
                     <div class="position-relative">
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://www.facebook.com/khanhhuyenvemaybay" target="_blank"
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.femaleData.fb}}" target="_blank"
                             ><i class="fab fa-facebook-f"></i
                         ></a>
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://zalo.me/0353578378" target="_blank">Zalo</a>
-                        <a class="btn btn-outline-primary btn-square mr-1" href="https://www.facebook.com/khanhhuyenvemaybay" target="_blank"
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.femaleData.zl}}" target="_blank">Zalo</a>
+                        <a class="btn btn-outline-primary btn-square mr-1" href="{{ABOUT_DATA.femaleData.ins}}" target="_blank"
                             ><i class="fab fa-instagram"></i
                         ></a>
-                        <a class="btn btn-outline-primary btn-square" href="tel:0353578378"
+                        <a class="btn btn-outline-primary btn-square" href="tel:{{ABOUT_DATA.femaleData.tel}}"
                             ><i class="fa fa-mobile-alt"></i
                         ></a>
                     </div>
