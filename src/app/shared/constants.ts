@@ -1,3 +1,5 @@
+export const BASE_URL = 'https://giaphue-wedding.web.app';
+
 export const OPERATION_SYSTEM = {
     IOS: 'ios',
     ANDROID: 'android',
@@ -5,25 +7,7 @@ export const OPERATION_SYSTEM = {
     OTHER: 'other'
 };
 
-export const GG_MAP_MALE = 'https://maps.app.goo.gl/Bt6NfSEqjiQGjywYA';
-
-export const GG_MAP_FEMALE = 'https://maps.app.goo.gl/Ga5wz15S43QsBcAW8';
-
 export const DATE_COUNT_DOWN = '2025/02/07';
-
-export const EVENT_INFO_MALE = {
-    UID: 'male_wedding_id',
-    START_TIME: '20240324T080000',
-    END_TIME: '20240324T235900',
-    LOCATION: 'Khu 11 - Hiền Lương - Hạ Hòa - Phú Thọ'
-};
-
-export const EVENT_INFO_FEMALE = {
-    UID: 'female_wedding_id',
-    START_TIME: '20240317T080000',
-    END_TIME: '20240317T235900',
-    LOCATION: 'Tùng Châu - Đức Thọ - Hà Tĩnh'
-};
 
 export const MALE_NAME = 'Giáp';
 export const MALE_FULL_NAME = 'Nguyễn Giáp';
@@ -49,8 +33,6 @@ export const ABOUT_DATA = {
   }
 }
 
-export const SECRET_KEY = 'tuanhuyen_wedding';
-
 export const CAROUSEL_DATA = {
   images: [
     {url: "https://lh3.googleusercontent.com/pw/AP1GczMaI8GymHEHZoUbHNjeT0EugQbuKCbnX2UmHkw-h91y_50W6_oUoquG1ksCo7Bu5Y8l0Zlhk4XLJH6KQg5mDZ4h5X6TZsf6aTzz_9t3-qQ8xmQYlEWgBZvB1tyBFENuKhvm14AeeN8B1_BN0eXuTUg=w523-h929-s-no-gm",
@@ -72,6 +54,7 @@ export const EVENT_DATA = {
       address: 'Khu 13, Hiền Lương, Hạ Hòa, Phú Thọ',
       dateStr: '06-07/02/2025',
       dateLunarStr: '09-10/01/2025',
+      ggMap: "https://maps.app.goo.gl/ro4iPZqeEPwPNWUi7"
     },
   femaleData:{
     image: 'https://lh3.googleusercontent.com/pw/AP1GczNMFIwZ6SE9Bo_4DurO3x0AEj10ytXr8_REiQuZPj7usnruU78ze598dptRM2NiCJmSjIN8b7R_HU7E-sgL7QRLgy2OgMRZei4M5sQThu_y5jQCQug7qm6WuOvye19QgN5RNWOT-8RbzDFiGlVEx_o=w619-h929-s-no-gm',
@@ -79,8 +62,23 @@ export const EVENT_DATA = {
     address: 'Xóm 8, Bồi Sơn, Đô Lương, Nghệ An',
     dateStr: '04-05/02/2025',
     dateLunarStr: '07-08/01/2025',
+    ggMap: "https://maps.app.goo.gl/bsDBE9KhaKA3EFrH9"
   },
 }
+
+export const EVENT_INFO_MALE = {
+  UID: 'male_wedding_id',
+  START_TIME: '20250207T080000',
+  END_TIME: '20250207T235900',
+  LOCATION: EVENT_DATA.maleData.address
+};
+
+export const EVENT_INFO_FEMALE = {
+  UID: 'female_wedding_id',
+  START_TIME: '20250205T080000',
+  END_TIME: '20250205T235900',
+  LOCATION: EVENT_DATA.femaleData.address
+};
 
 export const STORY_DATA = {
   quote: 'Hãy để tình yêu diễn biến thật tự nhiên, đã là duyên thì xa đến mấy cũng chẳng sợ lạc đường',
@@ -105,19 +103,21 @@ export const STORY_DATA = {
 export const MONEY_DATA = {
   maleData: {
     bank: "MB Bank",
-    account_name: "Nguyễn Văn Giáp",
+    accountName: "Nguyễn Văn Giáp",
     account: "0388966276",
-    qr_image: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
+    qrImage: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
   },
   femaleData: {
     bank: "MB Bank",
-    account_name: "Hoàng Thanh Kim Huệ",
+    accountName: "Hoàng Thanh Kim Huệ",
     account: "0336135208",
-    qr_image: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
+    qrImage: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
   }
 }
 
 export const GALLERY_DATA = {
+  maleAlbumUrl:"",
+  femaleAlbumUrl:"",
   images: [
     "https://lh3.googleusercontent.com/pw/AP1GczPaGupJo5GwFv9SLWAA-v556VRVl9FKLACLIrRmQZi8lnos6twbUZHqXNTxAQ4zFktzwryFjwTS5eW1gzFuyre3uyrg4et3B4rtbseYCR0zLiUSJaUJaxuf2lS6XVKt3115oxkh29-39JLLZiXxyjgL=w619-h929-s-no-gm",
     "https://lh3.googleusercontent.com/pw/AP1GczNl1Q0N-3RPDjUMorIdGz8XqwF29jJ2wk_O2bU23Wkc24KriTzC0FsFO_oOhsbGQ1g7Ve87DIYw55FDVOSE5zD689CapYzofzIaGvT9LMmq3Vo80yoNbUsVVzIeknCf5c8rtjgZnZUGPt73BQnh4xqF=w619-h929-s-no-gm"

@@ -7,6 +7,7 @@ import _ from 'lodash';
 import { FirestoreWishService } from '../../../services/firestore-wish.service';
 import { ToastrService } from 'ngx-toastr';
 import Utils from '../../../shared/utils';
+import { FEMALE_NAME, MALE_NAME } from '../../../shared/constants';
 
 @Component({
     selector: 'app-wish',
@@ -97,7 +98,7 @@ export class WishComponent {
     openToast() {
         try {
             this.toastr.success(
-                'Tuấn Huyền cảm ơn lời chúc của bạn ạ',
+                `${MALE_NAME} ${FEMALE_NAME} cảm ơn lời chúc của bạn ạ`,
                 'Gửi lời chúc thành công!',
                 {
                     progressBar: true,

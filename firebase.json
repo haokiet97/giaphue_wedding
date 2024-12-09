@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/tuanhuyen-wedding/browser",
+    "public": "dist/tg-wedding-template/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -25,16 +25,25 @@ export default class Utils {
     };
 
     public static isContainBadWord(text: string) {
-        if (_.isEmpty(text)) return true;
+      if (_.isEmpty(text)) return true;
 
-        const regexp = new RegExp(
-            `(\\s|^)(\\b${DEFAULT_BLACKLIST.join('\\b|\\b')}\\b)(\\s|$)`,
-            'gi'
-        );
-        text = text.normalize();
+      const badWords = DEFAULT_BLACKLIST.map((word) => word.trim());
+      const regexp = new RegExp(`\\b(${badWords.join('|')})\\b`, 'gi');
 
-        return regexp.test(text);
+      return regexp.test(text);
     }
+
+    // public static isContainBadWord(text: string) {
+    //     if (_.isEmpty(text)) return true;
+    //
+    //     const regexp = new RegExp(
+    //         `(\\s|^)(\\b${DEFAULT_BLACKLIST.join('\\b|\\b')}\\b)(\\s|$)`,
+    //         'gi'
+    //     );
+    //     text = text.normalize();
+    //
+    //     return regexp.test(text);
+    // }
 
     public static AESEncrypt(plainText: string, secretKey: string): string {
         const encrypted = CryptoJS.AES.encrypt(plainText, secretKey).toString();
