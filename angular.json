@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tuanhuyen-wedding": {
+    "tg-wedding-template": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tuanhuyen-wedding",
+            "outputPath": "dist/tg-wedding-template",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tuanhuyen-wedding:build:production"
+              "buildTarget": "tg-wedding-template:build:production"
             },
             "development": {
-              "buildTarget": "tuanhuyen-wedding:build:development"
+              "buildTarget": "tg-wedding-template:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tuanhuyen-wedding:build"
+            "buildTarget": "tg-wedding-template:build"
           }
         },
         "test": {
