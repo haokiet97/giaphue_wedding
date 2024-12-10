@@ -108,10 +108,10 @@ export const MONEY_DATA = {
     qrImage: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
   },
   femaleData: {
-    bank: "MB Bank",
+    bank: "Vietin Bank",
     accountName: "Hoàng Thanh Kim Huệ",
-    account: "0336135208",
-    qrImage: "https://lh3.googleusercontent.com/pw/AP1GczOzqHh1YUByX42qVXfcMg7Q-TdaLj21LE5OsTWkmnEm5ArZ-vfz0FmJZZbCCRmr8E82DcB5niAh4LQiGasbP5qxPXLiR4wzvS2lSAP-HuKo5RC-h9W96XZa3evJnusxG008hx7HR09RGIAsEn3l2wY=w696-h929-s-no-gm"
+    account: "104867494401",
+    qrImage: "https://lh3.googleusercontent.com/pw/AP1GczPXV-2TsTvlMjTm_uS8qyFEWfqXgx73jR5f_eAiRy4mZODRwaT1Oe0__tvWfpviUP6sizcsb7pRgnZG9FEaTWHCb21JJALk9I85RNJ8x0dCz3ZrzT64e82YsO9y-F37XZbW0t2foR8IzgfxznqNflbW=w600-h800-s-no-gm"
   }
 }
 
