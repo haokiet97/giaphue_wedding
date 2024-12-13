@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import WEDDING_CONFIG from '../shared/wedding-config.json';
 
 // Define the interface to match the JSON structure
 export interface WeddingConfig {
@@ -137,16 +138,14 @@ export class WeddingConfigService {
   public loadConfig(): void {
     this.http.get<WeddingConfig>(this.configUrl).pipe(
       tap(config => {
-        console.log('Configuration loaded successfully', config);
-        this.configSubject.next(config);
+        this.configSubject.next(config ?? WEDDING_CONFIG);
       }),
       catchError(error => {
-        console.error('Error loading configuration', error);
-        // Optionally, you can set a default configuration
-        this.configSubject.next(null);
+        this.configSubject.next(this.configSubject.value ?? WEDDING_CONFIG);
         return of(null);
       })
     ).subscribe();
+
   }
 
   // Getter methods for specific config sections
@@ -166,5 +165,32 @@ export class WeddingConfigService {
     return this.configSubject.value?.names || null;
   }
 
+  public getOperationSystem() {
+    return this.configSubject.value?.operationSystem || null;
+  }
+
+  public getDateCountDown() {
+    return this.configSubject.value?.dateCountDown || null;
+  }
+
+  public getCarouselImages() {
+    return this.configSubject.value?.carousel.images || null;
+  }
+
+  public getEvents() {
+    return this.configSubject.value?.events || null;
+  }
+
+  public getStory() {
+    return this.configSubject.value?.story || null;
+  }
+
+  public getMonetaryGifts() {
+    return this.configSubject.value?.monetaryGifts || null;
+  }
+
+  public getGallery() {
+    return this.configSubject.value?.gallery || null;
+  }
   // Add more specific getter methods as needed
 }

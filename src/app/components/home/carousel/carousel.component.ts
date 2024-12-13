@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import {FEMALE_NAME, MALE_NAME, CAROUSEL_DATA} from "../../../shared/constants";
+import {Component, HostListener} from '@angular/core';
 import {forEach} from "lodash";
 import {NgForOf} from "@angular/common";
 import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
@@ -14,24 +13,26 @@ import {WeddingConfig, WeddingConfigService} from "../../../services/config.serv
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  protected readonly carouselImages = CAROUSEL_DATA.images;
-  protected readonly carouselVideo: string = CAROUSEL_DATA.video;
-  protected readonly MALE_NAME = MALE_NAME;
-  protected readonly FEMALE_NAME = FEMALE_NAME;
+  protected carouselImages: Array<{ portraitUrl: string; landscapeUrl: string }> | undefined = [];
+  protected carouselVideo: string | undefined = undefined;
+  protected maleName: { short: string; full: string } | undefined = undefined;
+  protected femaleName: { short: string; full: string } | undefined = undefined;
   protected readonly forEach = forEach;
   protected isLandscape: boolean = false;
-  config: WeddingConfig | null = null;
+  // config: WeddingConfig | null = null;
+
 
   constructor(private weddingConfigService:WeddingConfigService) {
   }
 
   ngOnInit() {
     this.weddingConfigService.config$.subscribe(config => {
-      this.config = config;
+      this.carouselImages = config?.carousel.images;
+      this.carouselVideo = config?.carousel.video;
+      this.maleName = config?.names.male;
+      this.femaleName = config?.names.female;
     });
   }
-
-
 
   ngAfterViewInit() {
     this.isLandscape = window.innerWidth > window.innerHeight;
@@ -40,5 +41,10 @@ export class CarouselComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isLandscape = event.target.innerWidth > event.target.innerHeight;
+  }
+
+  getImageUrl(image: any) {
+    if (!image) return '';
+    return this.isLandscape ? image.landscapeUrl : image.portraitUrl;
   }
 }
