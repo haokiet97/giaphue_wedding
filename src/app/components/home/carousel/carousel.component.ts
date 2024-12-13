@@ -1,7 +1,8 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {FEMALE_NAME, MALE_NAME, CAROUSEL_DATA} from "../../../shared/constants";
 import {forEach} from "lodash";
 import {NgForOf} from "@angular/common";
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-carousel',
@@ -19,6 +20,18 @@ export class CarouselComponent {
   protected readonly FEMALE_NAME = FEMALE_NAME;
   protected readonly forEach = forEach;
   protected isLandscape: boolean = false;
+  config: WeddingConfig | null = null;
+
+  constructor(private weddingConfigService:WeddingConfigService) {
+  }
+
+  ngOnInit() {
+    this.weddingConfigService.config$.subscribe(config => {
+      this.config = config;
+    });
+  }
+
+
 
   ngAfterViewInit() {
     this.isLandscape = window.innerWidth > window.innerHeight;
