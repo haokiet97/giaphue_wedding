@@ -11,7 +11,8 @@ import Utils from '../../../shared/utils';
 import moment from 'moment';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
+import {WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-event',
@@ -23,7 +24,8 @@ import emailjs from '@emailjs/browser';
 export class EventComponent {
   constructor(
     private calendarService: CalendarService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private weddingConfigService:WeddingConfigService
   ) {
   }
 
@@ -31,7 +33,7 @@ export class EventComponent {
   isAfter: any = false;
   date: any;
   now: any;
-  targetDateInput: any = DATE_COUNT_DOWN;
+  targetDateInput: any;
   targetDate: any;
   targetDateDisplay: any;
   targetTime: any;
@@ -42,9 +44,18 @@ export class EventComponent {
   minutes: any = 0;
   seconds: any = 0;
 
-  protected readonly maleEventData = EVENT_DATA.maleData;
-  protected readonly femaleEventData = EVENT_DATA.femaleData;
+  protected maleEventData: any = undefined;
+  protected  femaleEventData: any = undefined;
 
+  ngOnInit() {
+    this.weddingConfigService.config$.subscribe(config => {
+      this.targetDateInput = config?.dateCountDown;
+      this.maleEventData = config?.events?.male;
+      this.femaleEventData = config?.events?.female;
+    });
+  }
+
+  
   ngAfterViewInit() {
     this.calculateDateTarget();
 
