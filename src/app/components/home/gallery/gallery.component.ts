@@ -28,13 +28,15 @@ export class GalleryComponent {
 
   getDataImages() {
     let img_id = 1;
-    for (const imageUrl of GALLERY_DATA.images) {
+    let shuffledIndexes = [...Array(GALLERY_DATA.images.length).keys()].sort(() => 0.5 - Math.random());
+    console.log(shuffledIndexes)
+    for (const index of shuffledIndexes) {
       let img: PhotosApi = {
         albumId: 1,
         id: img_id,
         title: `Ảnh cưới ${MALE_NAME} ${FEMALE_NAME}`,
-        url: `${imageUrl}`,
-        thumbnailUrl: `${imageUrl}`
+        url: `${GALLERY_DATA.images[index]}`,
+        thumbnailUrl: `${GALLERY_DATA.images[index]}`
       };
 
       this.albumData?.push(img);
