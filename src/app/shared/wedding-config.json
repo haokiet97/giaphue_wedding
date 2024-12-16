@@ -13,7 +13,7 @@
       "full": "Nguyễn Giáp"
     },
     "female": {
-      "short": "Huệ", 
+      "short": "Huệ",
       "full": "Kim Huệ"
     }
   },
@@ -55,7 +55,7 @@
   "events": {
     "quote": "Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá.",
     "male": {
-      "image": "https://lh3.googleusercontent.com/pw/AP1GczO38uVfn03mbRIyf33BWyCuAirKFzrI7ow8uqrBr4qCoZ9QlFZaMijNd4X0dmN0f51BKrGeXs9epSPO1w-lMM3N-mb-gD8QntKVqX1t_WCstOuo2of6OENbS0rGjX46PjnAT_RkjmfF7SIQcvwKnj4=w619-h929-s-no-gm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNEtgsO-6OgFE_f9RKanhUnQtdQxtZP7ZmlRNyBQlvGdrALsQDRwt_R6B2fW3ZXT-PegMR6QxtF0AVUWs9mwdNMV54KSGfFe7IbxeyKGjVFfKR2Ljx1BW3DnSC5ERfsaBQMwFxb8PjOuX2YE1jqDMXp=w619-h929-s-no-gm",
       "location": "Tư gia gia đình Nam Hương",
       "address": "Khu 13, Hiền Lương, Hạ Hòa, Phú Thọ",
       "dateGregorian": "06-07/02/2025",
@@ -68,9 +68,9 @@
       }
     },
     "female": {
-      "image": "https://lh3.googleusercontent.com/pw/AP1GczNMFIwZ6SE9Bo_4DurO3x0AEj10ytXr8_REiQuZPj7usnruU78ze598dptRM2NiCJmSjIN8b7R_HU7E-sgL7QRLgy2OgMRZei4M5sQThu_y5jQQug7qm6WuOvye19QgN5RNWOT-8RbzDFiGlVEx_o=w619-h929-s-no-gm",
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczNMFIwZ6SE9Bo_4DurO3x0AEj10ytXr8_REiQuZPj7usnruU78ze598dptRM2NiCJmSjIN8b7R_HU7E-sgL7QRLgy2OgMRZei4M5sQThu_y5jQCQug7qm6WuOvye19QgN5RNWOT-8RbzDFiGlVEx_o=w619-h929-s-no-gm",
       "location": "Tư gia gia đình Thành Nhung",
-      "address": "Xóm 8, Bồi Sơn, Đô Lương, Nghệ An",
+      "address": "Xóm Thắng Lợi, Bồi Sơn, Đô Lương, Nghệ An",
       "dateGregorian": "04-05/02/2025",
       "dateLunar": "07-08/01/2025",
       "googleMapsLink": "https://maps.app.goo.gl/bsDBE9KhaKA3EFrH9",
