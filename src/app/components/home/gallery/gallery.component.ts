@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { FEMALE_NAME, GALLERY_DATA, MALE_NAME } from '../../../shared/constants';
+import {WeddingConfigService} from "../../../services/config.service";
 
 export interface PhotosApi {
   albumId?: number;
@@ -19,24 +19,31 @@ export interface PhotosApi {
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
-  maxImageItem = 8;
   albumData?: any = [];
+  names: any = undefined;
+  galleryData: any = undefined;
+
+  constructor(private weddingConfigService:WeddingConfigService) {
+  }
 
   ngOnInit() {
-    this.getDataImages();
+    this.weddingConfigService.config$.subscribe(config => {
+      this.names = config?.names;
+      this.galleryData = config?.gallery;
+      this.getDataImages();
+    });
   }
 
   getDataImages() {
     let img_id = 1;
-    let shuffledIndexes = [...Array(GALLERY_DATA.images.length).keys()].sort(() => 0.5 - Math.random());
-    console.log(shuffledIndexes)
+    let shuffledIndexes = [...Array(this.galleryData.images.length).keys()].sort(() => 0.5 - Math.random());
     for (const index of shuffledIndexes) {
       let img: PhotosApi = {
         albumId: 1,
         id: img_id,
-        title: `Ảnh cưới ${MALE_NAME} ${FEMALE_NAME}`,
-        url: `${GALLERY_DATA.images[index]}`,
-        thumbnailUrl: `${GALLERY_DATA.images[index]}`
+        title: `Ảnh cưới ${this.names.male.short} ${this.names.female.short}`,
+        url: `${this.galleryData.images[index]}`,
+        thumbnailUrl: `${this.galleryData.images[index]}`
       };
 
       this.albumData?.push(img);
@@ -74,5 +81,4 @@ export class GalleryComponent {
       }
     }
   };
-  protected readonly GALLERY_DATA = GALLERY_DATA;
 }

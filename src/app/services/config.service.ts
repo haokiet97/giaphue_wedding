@@ -109,6 +109,7 @@ export interface WeddingConfig {
     };
   };
   gallery: {
+    quote: string;
     maleAlbumUrl: string;
     femaleAlbumUrl: string;
     images: string[];
