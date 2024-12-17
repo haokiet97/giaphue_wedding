@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {STORY_DATA} from "../../../shared/constants";
+import {WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-story',
@@ -13,6 +14,13 @@ import {STORY_DATA} from "../../../shared/constants";
   styleUrl: './story.component.css'
 })
 export class StoryComponent {
+  storyData: any = undefined;
 
-  protected readonly STORY_DATA = STORY_DATA;
+  constructor(private weddingConfigService:WeddingConfigService) {}
+
+  ngOnInit() {
+    this.weddingConfigService.config$.subscribe(config => {
+      this.storyData = config?.story;
+    });
+  }
 }
