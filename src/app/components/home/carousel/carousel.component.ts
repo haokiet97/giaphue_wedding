@@ -31,6 +31,7 @@ export class CarouselComponent {
       this.carouselVideo = config?.carousel.video;
       this.maleName = config?.names.male;
       this.femaleName = config?.names.female;
+      console.log(this.carouselVideo)
     });
   }
 

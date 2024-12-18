@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {FEMALE_FULL_NAME, MALE_FULL_NAME} from "../../../shared/constants";
+import {Component, Input} from '@angular/core';
+import {WeddingConfig} from "../../../services/config.service";
+import {config} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import {FEMALE_FULL_NAME, MALE_FULL_NAME} from "../../../shared/constants";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
-  protected readonly MALE_FULL_NAME = MALE_FULL_NAME;
-  protected readonly FEMALE_FULL_NAME = FEMALE_FULL_NAME;
+  @Input() config!: WeddingConfig | null;
+  ngOnInit() {
+  }
 }

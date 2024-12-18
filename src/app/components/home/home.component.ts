@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StoryComponent } from './story/story.component';
 import { WishComponent } from './wish/wish.component';
 import { LightGalleryComponent } from "./light-gallery/light-gallery.component";
+import {WeddingConfig, WeddingConfigService} from "../../services/config.service";
 
 @Component({
     selector: 'app-home',
@@ -36,9 +37,10 @@ import { LightGalleryComponent } from "./light-gallery/light-gallery.component";
     styleUrl: './home.component.css'
 })
 export class HomeComponent {
-    guest: any = '';
+  guest: any = '';
+  config: WeddingConfig | null = null;
 
-    constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private weddingConfigService: WeddingConfigService) {}
 
     ngOnInit(): void {
         let guestParam = this.route.snapshot.queryParams['g'];
@@ -47,5 +49,9 @@ export class HomeComponent {
             // this.guest = Utils.AESDecrypt(guestParam, SECRET_KEY);
             this.guest = guestParam;
         }
+
+      this.weddingConfigService.config$.subscribe(config => {
+        this.config = config;
+      });
     }
 }
