@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6 text-center">
         <h5 class="font-weight-normal text-muted mb-3 pb-3">
-          "{{galleryData.quote}}"
+          "{{config?.gallery?.quote}}"
         </h5>
       </div>
     </div>
@@ -17,11 +17,11 @@
     <i class="far fa-heart text-white"></i>
   </div>
   <div class="container mb-5 text-center">
-    <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="{{galleryData.maleAlbumUrl}}">
+    <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="{{config?.gallery?.maleAlbumUrl}}">
       <i class="fa fa-camera pr-1"></i> Album Nhà Trai
     </a>
 
-    <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="{{galleryData.femaleAlbumUrl}}">
+    <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="{{config?.gallery?.femaleAlbumUrl}}">
       <i class="fa fa-camera pr-1"></i> Album Nhà Gái
     </a>
   </div>

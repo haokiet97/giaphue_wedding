@@ -24,26 +24,34 @@ export default class Utils {
         return OPERATION_SYSTEM.OTHER;
     };
 
-    public static isContainBadWord(text: string) {
-      if (_.isEmpty(text)) return true;
-
-      const badWords = DEFAULT_BLACKLIST.map((word) => word.trim());
-      const regexp = new RegExp(`\\b(${badWords.join('|')})\\b`, 'gi');
-
-      return regexp.test(text);
-    }
-
     // public static isContainBadWord(text: string) {
-    //     if (_.isEmpty(text)) return true;
     //
-    //     const regexp = new RegExp(
-    //         `(\\s|^)(\\b${DEFAULT_BLACKLIST.join('\\b|\\b')}\\b)(\\s|$)`,
-    //         'gi'
-    //     );
-    //     text = text.normalize();
+    //   console.log("isContainBadWord => ", text);
+    //   if (_.isEmpty(text)) return true;
     //
-    //     return regexp.test(text);
+    //   const badWords = DEFAULT_BLACKLIST.map((word) => word.trim().toLowerCase().normalize("NFD"));
+    //   const regexp = new RegExp(`(${badWords.join('|')})`, 'gi');
+    //
+    //   return regexp.test(text.trim().toLowerCase().normalize("NFD"));
+    //
+    //   // const badWords = DEFAULT_BLACKLIST.map((word) => word.trim());
+    //   // const regexp = new RegExp(`\\b(${badWords.join('|')})\\b`, 'gi');
+    //   //
+    //   // return regexp.test(text);
     // }
+
+
+    public static isContainBadWord(text: string) {
+        if (_.isEmpty(text)) return true;
+
+        const regexp = new RegExp(
+            `(\\s|^)(\\b${DEFAULT_BLACKLIST.join('\\b|\\b')}\\b)(\\s|$)`,
+            'gi'
+        );
+        text = text.normalize();
+
+        return regexp.test(text);
+    }
 
     public static AESEncrypt(plainText: string, secretKey: string): string {
         const encrypted = CryptoJS.AES.encrypt(plainText, secretKey).toString();

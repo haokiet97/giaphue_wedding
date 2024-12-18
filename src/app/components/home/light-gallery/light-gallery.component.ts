@@ -24,6 +24,5 @@ export class LightGalleryComponent {
 	};
 	onBeforeSlide = (detail: BeforeSlideDetail): void => {
 		const { index, prevIndex } = detail;
-		console.log(index, prevIndex);
 	};
 }

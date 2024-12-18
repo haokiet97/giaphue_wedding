@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, Input, SimpleChanges} from '@angular/core';
 import {forEach} from "lodash";
 import {NgForOf} from "@angular/common";
 import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
@@ -13,30 +13,26 @@ import {WeddingConfig, WeddingConfigService} from "../../../services/config.serv
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  protected carouselImages: Array<{ portraitUrl: string; landscapeUrl: string }> | undefined = [];
-  protected carouselVideo: string | undefined = undefined;
-  protected maleName: { short: string; full: string } | undefined = undefined;
-  protected femaleName: { short: string; full: string } | undefined = undefined;
+  @Input() config!: WeddingConfig | null;
   protected readonly forEach = forEach;
-  protected isLandscape: boolean = false;
-  // config: WeddingConfig | null = null;
+  isLandscape: boolean = false;
+  videoUrl: string = '';
 
 
-  constructor(private weddingConfigService:WeddingConfigService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.carouselImages = config?.carousel.images;
-      this.carouselVideo = config?.carousel.video;
-      this.maleName = config?.names.male;
-      this.femaleName = config?.names.female;
-      console.log(this.carouselVideo)
-    });
   }
 
   ngAfterViewInit() {
     this.isLandscape = window.innerWidth > window.innerHeight;
+  }
+
+  ngOnchange(changes:SimpleChanges) {
+    if (changes['config'] && this.config) {
+      this.videoUrl = this.config?.carousel?.video;
+    }
   }
 
   @HostListener('window:resize', ['$event'])

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {WeddingConfigService} from "../../../services/config.service";
+import {Component, Input} from '@angular/core';
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-money',
@@ -10,14 +10,8 @@ import {WeddingConfigService} from "../../../services/config.service";
 })
 export class MoneyComponent {
 
-  protected monetaryGifts: any | undefined = undefined;
+  @Input() config!: WeddingConfig | null;
 
-  constructor(private weddingConfigService:WeddingConfigService) {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.monetaryGifts =config?.monetaryGifts;
-    });
-  }
 }

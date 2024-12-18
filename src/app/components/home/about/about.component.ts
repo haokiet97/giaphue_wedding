@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {WeddingConfigService} from "../../../services/config.service";
+import {Component, Input} from '@angular/core';
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-about',
@@ -13,17 +13,10 @@ export class AboutComponent {
   protected femaleFullName: string | undefined = undefined;
   protected maleInfo: any = undefined;
   protected femaleInfo: any = undefined;
+  @Input() config!: WeddingConfig | null;
 
 
-  constructor(private weddingConfigService:WeddingConfigService) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.maleFullName = config?.names?.male?.full;
-      this.femaleFullName = config?.names?.female?.full;
-      this.maleInfo = config?.about?.male;
-      this.femaleInfo = config?.about?.female;
-    });
-  }
 }

@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import {WeddingConfigService} from "../../../services/config.service";
+import {CommonModule} from '@angular/common';
+import {Component, Input, SimpleChanges} from '@angular/core';
+import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
+import {WeddingConfig} from "../../../services/config.service";
 
 export interface PhotosApi {
   albumId?: number;
@@ -19,31 +19,32 @@ export interface PhotosApi {
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
+  @Input() config!: WeddingConfig | null;
   albumData?: any = [];
-  names: any = undefined;
-  galleryData: any = undefined;
 
-  constructor(private weddingConfigService:WeddingConfigService) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.names = config?.names;
-      this.galleryData = config?.gallery;
+  ngAfterViewInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['config'] && this.config){
+      this.albumData = [];
       this.getDataImages();
-    });
+    }
   }
 
   getDataImages() {
     let img_id = 1;
-    let shuffledIndexes = [...Array(this.galleryData.images.length).keys()].sort(() => 0.5 - Math.random());
+    let shuffledIndexes = [...Array(this.config?.gallery?.images?.length).keys()].sort(() => 0.5 - Math.random());
     for (const index of shuffledIndexes) {
       let img: PhotosApi = {
         albumId: 1,
         id: img_id,
-        title: `Ảnh cưới ${this.names.male.short} ${this.names.female.short}`,
-        url: `${this.galleryData.images[index]}`,
-        thumbnailUrl: `${this.galleryData.images[index]}`
+        title: `Ảnh cưới ${this.config?.names?.male?.short} ${this.config?.names?.female?.short}`,
+        url: `${this.config?.gallery?.images[index]}`,
+        thumbnailUrl: `${this.config?.gallery?.images[index]}`
       };
 
       this.albumData?.push(img);

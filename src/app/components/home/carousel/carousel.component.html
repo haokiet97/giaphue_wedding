@@ -3,11 +3,11 @@
 
     <div class="carousel-inner">
 
-      <div *ngFor="let image of carouselImages; let i = index" class="carousel-item position-relative {{i === 0 ? 'active' : ''}}" style="height: 100vh; min-height: 400px;">
-        <img [src]="getImageUrl(image)" class="position-absolute w-100 h-100" style="object-fit: cover;" />
+      <div *ngFor="let image of config?.carousel?.images; let i = index" class="carousel-item position-relative {{i === 0 ? 'active' : ''}}" style="height: 100vh; min-height: 400px;">
+        <img [src]="isLandscape ? image.landscapeUrl : image.portraitUrl" class="position-absolute w-100 h-100" style="object-fit: cover;" />
         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
           <div class="p-3" style="max-width: 900px;">
-            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">{{ maleName?.short }} & {{ femaleName?.short }}</h1>
+            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">{{ config?.names?.male?.short }} & {{ config?.names?.female?.short }}</h1>
             <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
               <h2 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">
                 {{i % 2 === 0 ? 'Lễ Thành Hôn' : 'Lễ Vu Quy'}}</h2>
@@ -15,7 +15,7 @@
             <button type="button"
                     class="btn-play mx-auto"
                     [attr.data-toggle]="'modal'"
-                    [attr.data-src]="carouselVideo"
+                    [attr.data-src]="videoUrl"
                     [attr.data-target]="'#videoModal'">
               <span></span>
             </button>

@@ -77,7 +77,6 @@ export class WishComponent {
     if (!this.isSuccessData(formData)) {
       return;
     }
-    ;
 
     let messageWish = formData.message.trim();
     if (!_.isEmpty(messageWish)) {

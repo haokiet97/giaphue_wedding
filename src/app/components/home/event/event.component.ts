@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, SimpleChanges} from '@angular/core';
 import { CalendarService } from '../../../services/calendar.service';
 import {
   OPERATION_SYSTEM
@@ -8,7 +8,7 @@ import moment from 'moment';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 // import emailjs from '@emailjs/browser';
-import {WeddingConfigService} from "../../../services/config.service";
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-event',
@@ -18,20 +18,14 @@ import {WeddingConfigService} from "../../../services/config.service";
   styleUrl: './event.component.css'
 })
 export class EventComponent {
-  constructor(
-    private calendarService: CalendarService,
-    private toastr: ToastrService,
-    private weddingConfigService:WeddingConfigService
-  ) {
-  }
-
+  @Input() config!: WeddingConfig | null;
   daysDifference: any = 0;
   isAfter: any = false;
   date: any;
   now: any;
   targetDateInput: any;
   targetDate: any;
-  targetDateDisplay: any;
+  targetDateDisplay: string = '';
   targetTime: any;
   difference: any;
 
@@ -47,39 +41,75 @@ export class EventComponent {
   protected maleEventData: any = undefined;
   protected femaleEventData: any = undefined;
 
+  constructor(
+    private calendarService: CalendarService,
+    private toastr: ToastrService
+  ) {
+  }
+
   ngOnInit() {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.baseUrl = config?.baseUrl;
-      this.targetDateInput = config?.dateCountDown;
-      this.quote = config?.events.quote;
-      this.names = config?.names;
-      this.contacts = {
-        male: config?.about?.male?.socialMedia,
-        female: config?.about?.female?.socialMedia
-      }
-      this.maleEventData = config?.events?.male;
-      this.femaleEventData = config?.events?.female;
-    });
   }
 
 
-  ngAfterViewInit() {
-    this.calculateDateTarget();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['config'] && this.config) {
+      this.baseUrl = this.config?.baseUrl;
+      this.targetDateInput = this.config?.dateCountDown;
+      this.quote = this.config?.events?.quote;
+      this.names = this.config?.names;
+      this.contacts = {
+        male: this.config?.about?.male?.socialMedia,
+        female: this.config?.about?.female?.socialMedia
+      }
+      this.maleEventData = this.config?.events?.male;
+      this.femaleEventData = this.config?.events?.female;
 
-    if (!this.isAfter) {
-      this.targetDate = new Date(this.targetDateInput?.toString());
-      this.targetTime = this.targetDate.getTime();
-      this.targetDateDisplay = moment(this.targetDateInput, 'YYYY-MM-DD').format('DD/MM/YYYY');
+      this.calculateDateTarget();
+      if (!this.isAfter) {
+        this.targetDate = new Date(this.targetDateInput?.toString());
+        this.targetTime = this.targetDate.getTime();
+        this.targetDateDisplay = this.targetDateInput? moment(this.targetDate).format('DD/MM/YYYY') : "";
 
-      setInterval(() => {
-        this.tickTock();
-        this.difference = this.targetTime - this.now;
-        this.difference = this.difference / (1000 * 60 * 60 * 24);
-        this.difference = this.difference <= 0 ? 0 : this.difference;
-      }, 1000);
+        setInterval(() => {
+          this.tickTock();
+          this.difference = this.targetTime - this.now;
+          this.difference = this.difference / (1000 * 60 * 60 * 24);
+          this.difference = this.difference <= 0 ? 0 : this.difference;
+        }, 1000);
+      }
+
+      this.checkAnniversary();
     }
+  }
 
-    this.checkAnniversary();
+  ngAfterViewInit() {
+
+    // this.baseUrl = this.config?.baseUrl;
+    // this.targetDateInput = this.config?.dateCountDown;
+    // this.quote = this.config?.events?.quote;
+    // this.names = this.config?.names;
+    // this.contacts = {
+    //   male: this.config?.about?.male?.socialMedia,
+    //   female: this.config?.about?.female?.socialMedia
+    // }
+    // this.maleEventData = this.config?.events?.male;
+    // this.femaleEventData = this.config?.events?.female;
+
+    // this.calculateDateTarget();
+    // if (!this.isAfter) {
+    //   this.targetDate = new Date(this.targetDateInput?.toString());
+    //   this.targetTime = this.targetDate.getTime();
+    //   this.targetDateDisplay = this.targetDateInput? moment(this.targetDate).format('DD/MM/YYYY') : "";
+    //
+    //   setInterval(() => {
+    //     this.tickTock();
+    //     this.difference = this.targetTime - this.now;
+    //     this.difference = this.difference / (1000 * 60 * 60 * 24);
+    //     this.difference = this.difference <= 0 ? 0 : this.difference;
+    //   }, 1000);
+    // }
+    //
+    // this.checkAnniversary();
   }
 
   tickTock() {
@@ -100,7 +130,6 @@ export class EventComponent {
     this.daysDifference = sortedDates[1].diff(sortedDates[0], 'days');
     if (this.daysDifference === 0) this.daysDifference = 1;
 
-    console.log('this.isAfter =' + this.isAfter);
   }
 
   onOpenMap(gender: string): void {

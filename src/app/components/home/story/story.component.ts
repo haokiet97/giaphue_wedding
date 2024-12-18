@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
-import {WeddingConfigService} from "../../../services/config.service";
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-story',
@@ -13,13 +13,10 @@ import {WeddingConfigService} from "../../../services/config.service";
   styleUrl: './story.component.css'
 })
 export class StoryComponent {
-  storyData: any = undefined;
+  @Input() config!: WeddingConfig | null;
 
-  constructor(private weddingConfigService:WeddingConfigService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.weddingConfigService.config$.subscribe(config => {
-      this.storyData = config?.story;
-    });
   }
 }
