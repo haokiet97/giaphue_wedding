@@ -1,116 +1,118 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import {Component, inject, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import moment from 'moment';
 import _ from 'lodash';
-import { FirestoreWishService } from '../../../services/firestore-wish.service';
-import { ToastrService } from 'ngx-toastr';
+import {FirestoreWishService} from '../../../services/firestore-wish.service';
+import {ToastrService} from 'ngx-toastr';
 import Utils from '../../../shared/utils';
-import { FEMALE_NAME, MALE_NAME } from '../../../shared/constants';
+import {WeddingConfig} from "../../../services/config.service";
 
 @Component({
-    selector: 'app-wish',
-    standalone: true,
-    imports: [CommonModule, ReactiveFormsModule],
-    templateUrl: './wish.component.html',
-    styleUrl: './wish.component.css'
+  selector: 'app-wish',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './wish.component.html',
+  styleUrl: './wish.component.css'
 })
 export class WishComponent {
-    messageMaxlength: number = 1000;
+  @Input() config!: WeddingConfig | null;
 
-    items: any[] = [];
-    username!: FormControl;
-    message!: FormControl;
-    wishForm!: FormGroup;
+  messageMaxlength: number = 1000;
 
-    constructor(
-        private firestoreService: FirestoreWishService,
-        private toastr: ToastrService
-    ) {
+  items: any[] = [];
+  username!: FormControl;
+  message!: FormControl;
+  wishForm!: FormGroup;
 
+  constructor(
+    private firestoreService: FirestoreWishService,
+    private toastr: ToastrService
+  ) {
+
+  }
+
+  ngOnInit(): void {
+    this.loadItems();
+
+    this.username = new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(30),
+      Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)
+    ]);
+    this.message = new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(this.messageMaxlength)
+    ]);
+    this.wishForm = new FormGroup({
+      username: this.username,
+      message: this.message
+    });
+  }
+
+  loadItems(): void {
+    this.firestoreService.getItems().subscribe((items) => {
+      this.items = _.orderBy(items, ['createdAt'], ['desc']);
+    });
+  }
+
+  isSuccessData = (data: any) => {
+    if (!this.wishForm.valid) return false;
+
+    let username = data.username.trim();
+    let messageWish = data.message.trim();
+
+    if (username.length < 2 || username.length > 30) return false;
+
+    if (messageWish.length < 10 || messageWish.length > this.messageMaxlength) return false;
+
+    return true;
+  };
+
+  async onSubmit() {
+    let formData = this.wishForm.value;
+    if (!this.isSuccessData(formData)) {
+      return;
     }
 
-    ngOnInit(): void {
-        this.loadItems();
-
-        this.username = new FormControl('', [
-            Validators.required,
-            Validators.minLength(2),
-            Validators.maxLength(30),
-            Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)
-        ]);
-        this.message = new FormControl('', [
-            Validators.required,
-            Validators.minLength(10),
-            Validators.maxLength(this.messageMaxlength)
-        ]);
-        this.wishForm = new FormGroup({
-            username: this.username,
-            message: this.message
-        });
-    }
-
-    loadItems(): void {
-        this.firestoreService.getItems().subscribe((items) => {
-            this.items = _.orderBy(items, ['createdAt'], ['desc']);
-        });
-    }
-
-    isSuccessData = (data: any) => {
-        if (!this.wishForm.valid) return false;
-
-        let username = data.username.trim();
-        let messageWish = data.message.trim();
-
-        if (username.length < 2 || username.length > 30) return false;
-
-        if (messageWish.length < 10 || messageWish.length > this.messageMaxlength) return false;
-
-        return true;
-    };
-
-    async onSubmit() {
-        let formData = this.wishForm.value;
-        if (!this.isSuccessData(formData)) {
-            return;
-        };
-
-        let messageWish = formData.message.trim();
-        if (!_.isEmpty(messageWish)) {
-            let res = Utils.isContainBadWord(messageWish);
-            console.log('isContainBadWord => ', res);
-            if (res) {
-                this.wishForm.reset();
-
-                alert('Không gửi được do chứa từ ngữ hạn chế!');
-                return;
-            }
-        }
-        formData.createdAt = moment(new Date()).format('yyyy/MM/DD HH:mm:ss');
-
-        await this.firestoreService.addItem(formData);
+    let messageWish = formData.message.trim();
+    if (!_.isEmpty(messageWish)) {
+      let res = Utils.isContainBadWord(messageWish);
+      console.log('isContainBadWord => ', res);
+      if (res) {
         this.wishForm.reset();
 
-        this.openToast();
+        alert('Không gửi được do chứa từ ngữ hạn chế!');
+        return;
+      }
     }
+    formData.createdAt = moment(new Date()).format('yyyy/MM/DD HH:mm:ss');
 
-    openToast() {
-        try {
-            this.toastr.success(
-                `${MALE_NAME} ${FEMALE_NAME} cảm ơn lời chúc của bạn ạ`,
-                'Gửi lời chúc thành công!',
-                {
-                    progressBar: true,
-                    progressAnimation: 'decreasing'
-                }
-            );
-        } catch (err) {
-            console.log(err);
+    await this.firestoreService.addItem(formData);
+    this.wishForm.reset();
+
+    this.openToast();
+  }
+
+  openToast() {
+    try {
+      this.toastr.success(
+        `${this.config?.names.male.short} ${this.config?.names.female.short} cảm ơn lời chúc của bạn ạ`,
+        'Gửi lời chúc thành công!',
+        {
+          progressBar: true,
+          progressAnimation: 'decreasing'
         }
+      );
+    } catch (err) {
+      console.log(err);
     }
+  }
 
-    formatDateTime(originalDate : string) {
-        return moment(originalDate, 'YYYY/MM/DD HH:mm:ss').format('DD/MM/YYYY HH:mm:ss');
-    }
+  formatDateTime(originalDate: string) {
+    return moment(originalDate, 'YYYY/MM/DD HH:mm:ss').format('DD/MM/YYYY HH:mm:ss');
+  }
 }

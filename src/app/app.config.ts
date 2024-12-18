@@ -8,10 +8,11 @@ import { environment } from '../environments/environment';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { IMAGE_CONFIG } from '@angular/common';
+import {provideHttpClient} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), importProvidersFrom(
-    provideFirebaseApp(() => initializeApp(environment.firebase))), 
+    provideFirebaseApp(() => initializeApp(environment.firebase))),
     importProvidersFrom(provideFirestore(() => getFirestore())),
     provideAnimations(),
     provideToastr({
@@ -22,9 +23,10 @@ export const appConfig: ApplicationConfig = {
     {
       provide: IMAGE_CONFIG,
       useValue: {
-        disableImageSizeWarning: true, 
+        disableImageSizeWarning: true,
         disableImageLazyLoadWarning: true
       }
-    }
+    },
+    provideHttpClient()
   ]
 };

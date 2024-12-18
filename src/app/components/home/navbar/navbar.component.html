@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-pink navbar-dark py-3 py-lg-0 px-lg-5">
     <a href="index.html" class="navbar-brand d-block d-lg-none">
-        <h3 class="font-secondary text-white mb-n2">{{MALE_FULL_NAME}} <i class="far fa-heart text-red"></i> {{FEMALE_FULL_NAME}}</h3>
+        <h3 class="font-secondary text-white mb-n2">{{config?.names?.male?.full}} <i class="far fa-heart text-red"></i> {{config?.names?.female?.full}}</h3>
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
             <a href="#story" class="nav-item nav-link">Story</a>
         </div>
         <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-            <h2 class="font-secondary text-white mb-n2">{{MALE_FULL_NAME}} <i class="far fa-heart text-red"></i> {{FEMALE_FULL_NAME}}</h2>
+            <h2 class="font-secondary text-white mb-n2">{{config?.names?.male?.full}} <i class="far fa-heart text-red"></i> {{config?.names?.female?.full}}</h2>
         </a>
         <div class="navbar-nav mr-auto py-0">
             <a href="#wish" class="nav-item nav-link">Lời Chúc</a>

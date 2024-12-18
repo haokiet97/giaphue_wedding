@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
-import {STORY_DATA} from "../../../shared/constants";
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-story',
@@ -13,6 +13,10 @@ import {STORY_DATA} from "../../../shared/constants";
   styleUrl: './story.component.css'
 })
 export class StoryComponent {
+  @Input() config!: WeddingConfig | null;
 
-  protected readonly STORY_DATA = STORY_DATA;
+  constructor() {}
+
+  ngOnInit() {
+  }
 }

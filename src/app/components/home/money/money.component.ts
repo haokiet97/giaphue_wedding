@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {MONEY_DATA} from "../../../shared/constants";
+import {Component, Input} from '@angular/core';
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-money',
@@ -10,5 +10,8 @@ import {MONEY_DATA} from "../../../shared/constants";
 })
 export class MoneyComponent {
 
-  protected readonly MONEY_DATA = MONEY_DATA;
+  @Input() config!: WeddingConfig | null;
+
+  constructor() {}
+
 }

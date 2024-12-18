@@ -1,17 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, Input, SimpleChanges} from '@angular/core';
 import { CalendarService } from '../../../services/calendar.service';
 import {
-  DATE_COUNT_DOWN,
-  EVENT_DATA,
-  EVENT_INFO_FEMALE,
-  EVENT_INFO_MALE,
   OPERATION_SYSTEM
 } from '../../../shared/constants';
 import Utils from '../../../shared/utils';
 import moment from 'moment';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
+import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
 
 @Component({
   selector: 'app-event',
@@ -21,19 +18,14 @@ import emailjs from '@emailjs/browser';
   styleUrl: './event.component.css'
 })
 export class EventComponent {
-  constructor(
-    private calendarService: CalendarService,
-    private toastr: ToastrService
-  ) {
-  }
-
+  @Input() config!: WeddingConfig | null;
   daysDifference: any = 0;
   isAfter: any = false;
   date: any;
   now: any;
-  targetDateInput: any = DATE_COUNT_DOWN;
+  targetDateInput: any;
   targetDate: any;
-  targetDateDisplay: any;
+  targetDateDisplay: string = '';
   targetTime: any;
   difference: any;
 
@@ -42,26 +34,82 @@ export class EventComponent {
   minutes: any = 0;
   seconds: any = 0;
 
-  protected readonly maleEventData = EVENT_DATA.maleData;
-  protected readonly femaleEventData = EVENT_DATA.femaleData;
+  protected quote: string | undefined = '';
+  protected baseUrl: string | undefined = '';
+  protected names: any = undefined;
+  protected contacts: any = undefined;
+  protected maleEventData: any = undefined;
+  protected femaleEventData: any = undefined;
+
+  constructor(
+    private calendarService: CalendarService,
+    private toastr: ToastrService
+  ) {
+  }
+
+  ngOnInit() {
+  }
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['config'] && this.config) {
+      this.baseUrl = this.config?.baseUrl;
+      this.targetDateInput = this.config?.dateCountDown;
+      this.quote = this.config?.events?.quote;
+      this.names = this.config?.names;
+      this.contacts = {
+        male: this.config?.about?.male?.socialMedia,
+        female: this.config?.about?.female?.socialMedia
+      }
+      this.maleEventData = this.config?.events?.male;
+      this.femaleEventData = this.config?.events?.female;
+
+      this.calculateDateTarget();
+      if (!this.isAfter) {
+        this.targetDate = new Date(this.targetDateInput?.toString());
+        this.targetTime = this.targetDate.getTime();
+        this.targetDateDisplay = this.targetDateInput? moment(this.targetDate).format('DD/MM/YYYY') : "";
+
+        setInterval(() => {
+          this.tickTock();
+          this.difference = this.targetTime - this.now;
+          this.difference = this.difference / (1000 * 60 * 60 * 24);
+          this.difference = this.difference <= 0 ? 0 : this.difference;
+        }, 1000);
+      }
+
+      this.checkAnniversary();
+    }
+  }
 
   ngAfterViewInit() {
-    this.calculateDateTarget();
 
-    if (!this.isAfter) {
-      this.targetDate = new Date(this.targetDateInput?.toString());
-      this.targetTime = this.targetDate.getTime();
-      this.targetDateDisplay = moment(this.targetDateInput, 'YYYY-MM-DD').format('DD/MM/YYYY');
+    // this.baseUrl = this.config?.baseUrl;
+    // this.targetDateInput = this.config?.dateCountDown;
+    // this.quote = this.config?.events?.quote;
+    // this.names = this.config?.names;
+    // this.contacts = {
+    //   male: this.config?.about?.male?.socialMedia,
+    //   female: this.config?.about?.female?.socialMedia
+    // }
+    // this.maleEventData = this.config?.events?.male;
+    // this.femaleEventData = this.config?.events?.female;
 
-      setInterval(() => {
-        this.tickTock();
-        this.difference = this.targetTime - this.now;
-        this.difference = this.difference / (1000 * 60 * 60 * 24);
-        this.difference = this.difference <= 0 ? 0 : this.difference;
-      }, 1000);
-    }
-
-    this.checkAnniversary();
+    // this.calculateDateTarget();
+    // if (!this.isAfter) {
+    //   this.targetDate = new Date(this.targetDateInput?.toString());
+    //   this.targetTime = this.targetDate.getTime();
+    //   this.targetDateDisplay = this.targetDateInput? moment(this.targetDate).format('DD/MM/YYYY') : "";
+    //
+    //   setInterval(() => {
+    //     this.tickTock();
+    //     this.difference = this.targetTime - this.now;
+    //     this.difference = this.difference / (1000 * 60 * 60 * 24);
+    //     this.difference = this.difference <= 0 ? 0 : this.difference;
+    //   }, 1000);
+    // }
+    //
+    // this.checkAnniversary();
   }
 
   tickTock() {
@@ -75,14 +123,13 @@ export class EventComponent {
 
   calculateDateTarget() {
     const currentDate = moment();
-    const targetDate = moment(this.targetDateInput, 'YYYY-MM-DD');
+    const targetDate = moment(this.targetDateInput, 'YYYY/MM/DD');
     this.isAfter = currentDate.isAfter(targetDate);
 
     const sortedDates = [currentDate, targetDate].sort((a: any, b: any) => a - b);
     this.daysDifference = sortedDates[1].diff(sortedDates[0], 'days');
     if (this.daysDifference === 0) this.daysDifference = 1;
 
-    console.log('this.isAfter =' + this.isAfter);
   }
 
   onOpenMap(gender: string): void {
@@ -90,9 +137,9 @@ export class EventComponent {
 
     let mapLink = '';
     if (gender === 'male') {
-      mapLink = EVENT_DATA.maleData.ggMap;
+      mapLink = this.maleEventData.googleMapsLink;
     } else {
-      mapLink = EVENT_DATA.femaleData.ggMap;
+      mapLink = this.maleEventData.googleMapsLink;
     }
 
     window.open(mapLink);
@@ -102,17 +149,20 @@ export class EventComponent {
     let os = Utils.getMobileOperatingSystem();
 
     if (gender === 'male') {
+      let eventInfoMale = this.maleEventData.eventDetails;
+      eventInfoMale.LOCATION = this.maleEventData.address;
+      // eventInfoMale["location"] = this.maleEventData.address;
       if (os === OPERATION_SYSTEM.IOS) {
-        this.calendarService.downloadICSFile(EVENT_INFO_MALE);
+        this.calendarService.downloadICSFile(this.baseUrl, this.maleEventData, this.names, this.contacts);
       } else {
-        let urlGGCalendar = this.calendarService.genGoogleCalendarLink(EVENT_INFO_MALE);
+        let urlGGCalendar = this.calendarService.genGoogleCalendarLink(this.baseUrl, this.maleEventData, this.names, this.contacts);
         window.open(urlGGCalendar);
       }
     } else {
       if (os === OPERATION_SYSTEM.IOS) {
-        this.calendarService.downloadICSFile(EVENT_INFO_FEMALE);
+        this.calendarService.downloadICSFile(this.baseUrl,this.femaleEventData, this.names, this.contacts);
       } else {
-        let urlGGCalendar = this.calendarService.genGoogleCalendarLink(EVENT_INFO_FEMALE);
+        let urlGGCalendar = this.calendarService.genGoogleCalendarLink(this.baseUrl,this.femaleEventData, this.names, this.contacts);
         window.open(urlGGCalendar);
       }
     }
@@ -146,7 +196,7 @@ export class EventComponent {
   // }
 
   checkAnniversary() {
-    const targetDate = moment(DATE_COUNT_DOWN, 'DD/MM/YYYY');
+    const targetDate = moment(this.targetDateInput, 'YYYY/MM/DD');
     const currentDate = moment();
 
     const daysDifference = currentDate.diff(targetDate, 'days');
@@ -164,6 +214,4 @@ export class EventComponent {
       // this.sendMail(daysDifference.toString());
     }
   }
-
-  protected readonly EVENT_DATA = EVENT_DATA;
 }
