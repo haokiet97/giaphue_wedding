@@ -1,7 +1,7 @@
 import {Component, HostListener, Input, SimpleChanges} from '@angular/core';
 import {forEach} from "lodash";
 import {NgForOf} from "@angular/common";
-import {WeddingConfig, WeddingConfigService} from "../../../services/config.service";
+import {WeddingConfig} from "../../../services/config.service";
 
 @Component({
   selector: 'app-carousel',
