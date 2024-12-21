@@ -9,10 +9,6 @@ import {WeddingConfig, WeddingConfigService} from "../../../services/config.serv
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  protected maleFullName: string | undefined = undefined;
-  protected femaleFullName: string | undefined = undefined;
-  protected maleInfo: any = undefined;
-  protected femaleInfo: any = undefined;
   @Input() config!: WeddingConfig | null;
 
 

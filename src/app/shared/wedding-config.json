@@ -1,11 +1,5 @@
 {
   "baseUrl": "https://giaphue-wedding.web.app",
-  "operationSystem": {
-    "ios": "ios",
-    "android": "android",
-    "windowsPhone": "windows phone",
-    "other": "other"
-  },
   "dateCountDown": "2025/02/07",
   "names": {
     "male": {
@@ -15,28 +9,6 @@
     "female": {
       "short": "Huệ",
       "full": "Kim Huệ"
-    }
-  },
-  "about": {
-    "male": {
-      "image": "https://lh3.googleusercontent.com/pw/AP1GczP76nVafQDQ8rqVSbPvYFCQzijd5RI9I0bJ86xXS3LXKKpjTvngUujLd0uNw4TdxD8NwplrMdDJvtLTLK6jA9CcHjN0ppb-jG6-44AZt3gpmQWsT-WcoeGY5OT2z6rWPd2hSBP95hXF-L_dmvaNG98=w697-h929-s-no-gm",
-      "description": "Chú rể là một lập trình viên. Một người hiền lành, sống tình cảm, tuy đôi lúc hơi cứng nhắc nhưng luôn yêu thương gia đình và đặc biệt là cô dâu Kim Huệ.",
-      "socialMedia": {
-        "facebook": "https://www.facebook.com/giaplinux/",
-        "zalo": "",
-        "instagram": "",
-        "telephone": "0388966276"
-      }
-    },
-    "female": {
-      "image": "https://lh3.googleusercontent.com/pw/AP1GczPVdC5kTnmf_qhtc2b3BhSuMLcaRBEY7NYOORWY2PlIzWzFpdG0LHiBrXOWRjcjEMdMXIoOEEslf3bPV8FutxGCmOdq_3_33ZCRjvKxMGV-EULokSOjazzIM70TMYy-BoPkWXFRvAi3VB601VecZO4=w697-h929-s-no-gm",
-      "description": "Cô dâu là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chồng.",
-      "socialMedia": {
-        "facebook": "",
-        "zalo": "",
-        "instagram": "",
-        "telephone": "0336135208"
-      }
     }
   },
   "carousel": {
@@ -50,7 +22,7 @@
         "landscapeUrl": "https://lh3.googleusercontent.com/pw/AP1GczNnu-oGaLPOtIIyvSw1AHT4iGD7TzWgsQtqOAY78JHk47_aV1-yzq4p1pGUvEtLP0oXN0aZpmJf_ocVSsnn_TtyT2Zm5hagojMx_N_eJKZFb9DGpgZkf4jvzjCnzqQnwS5AQ0JUI-uA-nzocrzORzw=w1560-h877-s-no-gm"
       }
     ],
-    "video": "https://www.youtube.com/embed/lFbZlYOfYJU?si=Zov8z1gWQw_EI1Wk"
+    "video": "https://www.youtube.com/embed/XrF1TIGm_lQ?si=w0PCLXWAASKstywy"
   },
   "events": {
     "quote": "Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá.",
@@ -81,6 +53,28 @@
       }
     }
   },
+  "about": {
+    "male": {
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczP76nVafQDQ8rqVSbPvYFCQzijd5RI9I0bJ86xXS3LXKKpjTvngUujLd0uNw4TdxD8NwplrMdDJvtLTLK6jA9CcHjN0ppb-jG6-44AZt3gpmQWsT-WcoeGY5OT2z6rWPd2hSBP95hXF-L_dmvaNG98=w697-h929-s-no-gm",
+      "description": "Chú rể là một lập trình viên. Một người hiền lành, sống tình cảm, tuy đôi lúc hơi cứng nhắc nhưng luôn yêu thương gia đình và đặc biệt là cô dâu Kim Huệ.",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/giaplinux/",
+        "zalo": "",
+        "instagram": "",
+        "telephone": "0388966276"
+      }
+    },
+    "female": {
+      "image": "https://lh3.googleusercontent.com/pw/AP1GczPVdC5kTnmf_qhtc2b3BhSuMLcaRBEY7NYOORWY2PlIzWzFpdG0LHiBrXOWRjcjEMdMXIoOEEslf3bPV8FutxGCmOdq_3_33ZCRjvKxMGV-EULokSOjazzIM70TMYy-BoPkWXFRvAi3VB601VecZO4=w697-h929-s-no-gm",
+      "description": "Cô dâu là một người luôn vui vẻ, nhanh nhẹn và chịu khó. Luôn yêu thương chồng.",
+      "socialMedia": {
+        "facebook": "",
+        "zalo": "",
+        "instagram": "",
+        "telephone": "0336135208"
+      }
+    }
+  },
   "story": {
     "quote": "Hãy để tình yêu diễn biến thật tự nhiên, đã là duyên thì xa đến mấy cũng chẳng sợ lạc đường",
     "title": "Chuyện tình yêu chúng mình",
@@ -89,14 +83,50 @@
       {
         "title": "Lần ngặp mặt đầu tiên",
         "date": "15/04/2022",
-        "description": "desc 1",
-        "image": ""
+        "description": "Chúng mình gặp nhau trong một hoàn cảnh thật đặc biệt. Em gắp đồ ăn cho mình nhưng mình đã bỏ ra vì không quen. Ấn tượng ban đầu về nhau có vẻ không tốt, nhưng duyên số đã mang chúng mình lại với nhau.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczPn9AtrwXLL7-_fQEoKnxVqWuDcHsOd76oogjzPomzaLGH03tSqeoXwmeMCawc7XXTKSmxqFPqPa3181tMjep5dtF-qr8qMPzRObWTnQLemJEObAPlmQKnbKEcQ9f2cFlYQ-J1f-3fJu6KcRCVBilB8=w697-h929-s-no-gm"
       },
       {
-        "title": "Lần ngặp mặt đầu tiên2",
-        "date": "15/05/2022",
-        "description": "desc2",
-        "image": ""
+        "title": "Chuyến phượt đầu tiên",
+        "date": "08/05/2022",
+        "description": "Lần đầu tiên 2 đưa đi chơi hơi xa xa với nhau. Phi lên tận đỉnh Ba Vì, dắt tay nhau leo gần 1h đồng hồ để lên đền thờ Bác Hồ. Một thử thách đáng nhớ làm cho hai đứa thêm gắn kết hơn. ",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczMaqs7S8pxPdlNWCuu5pMhs3AvT8FTip5mpUNJ6XO0s_6i0ofBi3rTAb5ovO9smvXvQypvW_2wnTu8YnK4D19ua96Q0OxNaOXWRzTiM-tKiCiX6bfZj5LqL7sEmAmrJA2iZZ8XTP1T-XCISpoSY0ZdP=w527-h937-s-no-gm"
+      },
+      {
+        "title": "Lần đầu tiên về gia mắt nhà gái",
+        "date": "02/09/2022",
+        "description": "Lần đâu tiên về quê ra mắt nhà gái, cảm nhận đầu tiên là 'Èo sao mà xa thế?'. Nhưng rồi với sự mộc mạc thân thương của nhà gái khiến cho mình cảm thấy đây chắc là quê vợ của mình rồi. ",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczNADisZUdNFdnE4Rh11xqVUfIn-HWdSKQZByZqhfV38PB3c7ZGDNiSCD3Ro19OZmoYXGeWxsXIfRhQHAwUCbpUfG3-Os_rgkMs1kuCUdMLM8ApYYC2NKmcfv6MzHpRmeSeyM-k1OuaQ3LSrCnm5M2X9=w960-h720-s-no-gm"
+      },
+      {
+        "title": "Chuyến du lịch Mộc Châu đầy ý nghĩa",
+        "date": "27/05/2023",
+        "description": "Vượt qua những con dốc cao, hai đứa mình đến cao nguyên đầy thơ mộng. Nơi đây in dấu những bước chân vững chắc trên con đường tình yêu của 2 đứa.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczPclEi-jdFRXUbH25Y-zTC9VgMdcSDWjyCqOZhFhe3z9fegFOMOKLwWcYWcgknJ4HFu-tRRjeeKLY70Y1n3z0ZASUIVhAfvoreNB3cICgCNAHJJj1AyRJFjkPMFGp-HarfwHO8RhgjCrYaEE9dvbKWM=w625-h937-s-no-gm"
+      },
+      {
+        "title": "Ninh Bình nơi in dấu một cột mốc đặc biệt",
+        "date": "19/11/2023",
+        "description": "Nơi sơn thủy hữu tình đó, cùng với một sinh nhật đặc biệt, mình đã trao cho nàng chiếc nhẫn đánh dấu một bước tiến mới trong mối quan hệ của hai đứa mình.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczPOdWjCr17j4his_9ryps_7xF53_-ApE99ZqA5xqiil9Jif1LwnqsK7hAd5aFRdtfBMBG4tFknYAJ_s35_d-8Ma2_VMFFi0FJgRj1seKiZEVq2UYoWhDNoStmIPwx9eyyzt3JphwKyCUBd5zUUNiCEx=w527-h937-s-no-gm"
+      },
+      {
+        "title": "Lần đầu tiên ăn tết ở Nghệ An",
+        "date": "09/02/2024",
+        "description": "Lần đầu tiên ăn tết ở một nơi đặc biệt mang cho mình nhiều cung bậc cảm xúc khác nhau. Ban đầu tuy có một vài khác biệt về phong tục nhưng cho mình một cái tết thật ý nghĩa. Và đặc biệt là 'gọi tên Huệ trong đêm'.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczP7dl8hi77_0xznNBXpahaV9A7rDm8Y9scMDSzc-fSESrhToH1gS5Do-r5wqZOkF-ev42WrvN2XizDFW4o8a5_yzAwJzZWsDAK-JIxoFrp8qO-iSi0PBgbp9QXLjBJebv7kt8d203aJOhu3nPMN7PnL=w527-h937-s-no-gm"
+      },
+      {
+        "title": "Hành trình lên cao nguyên Daklak",
+        "date": "30/04/2024",
+        "description": "Cùng nhau về nơi 'chôn nhau cắt rốn' của em nơi có những người thân thương, có chú Voi ở bản Đôn, có cái nắng có cái gió làm xiêu lòng người. Cũng tính làm mảnh rẫy nhưng em bảo số em không làm nông dân được đâu.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczPpVyu8w155aLJ01LTYoGc50GQnMalOqPfaBxt3F2QNT-XEBhuDiSSvhKbmqkZZuK1QPQAki5tEEAnq5hzH2NP9u57rdqiE1iQDEJb4sIo3J_TYi-rtYzDwupLi_wOSirt67eeGkqlgUaqiDVuZpp0a=w960-h721-s-no-gm"
+      },
+      {
+        "title": "Tiến tới hôn nhân",
+        "date": "07/02/2025",
+        "description": "Sau một hành trình tích lũy về lượng, chuyện tình của chúng mình sẽ có bước nhảy vọt về chất. Đó là 2 đứa tiến tới hôn nhân, kể từ đây chúng mình tiếp tục xây dựng hạnh phúc trăm năm cùng nhau.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczMuewtFVn4Fp9QqX1UFue5bUPaGW3__wF6ymS8J2pDOdwoiI1uTNzf51EQMlC40w2lyLIoUR4EKZr0sf2CH4EdfA3qvuxbUcIuqQLLlMes2Tbu43rPGaoYHPbJfxadqA2whuq1ydRfCM9y2H0JmvLM=w619-h929-s-no-gm"
       }
     ]
   },
@@ -120,30 +150,35 @@
     "femaleAlbumUrl": "",
     "images": [
       "https://lh3.googleusercontent.com/pw/AP1GczPCFI8YDERcNfCl8ZzhxUB4ipJvXOYkqDbwxhsTjHqfqA4ZwIJTphbbuWWYB0XJu1AFqAkn54f3DyrpDG7FInpeT_MORYgGPyM4-X-zF6W9jxhSx94CUt9Dgccsm_6Jc3y26pzkm9IH0qu4Tul5qN7e=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMEhEEb8tvKDeVjZYKY-ba545qcjyLUV9t5x61lRBRBjFsCmtCDUgnaI0jOvW5c8viZz5K4w0DLs-cPhIUiAKwV_Y5LJK4u_NEhcuI7f3_1C759qsLLfgYNLD2vi5D1a0Syrlwg7nJC0p7sz1I4wsXy=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczNl1Q0N-3RPDjUMorIdGz8XqwF29jJ2wk_O2bU23Wkc24KriTzC0FsFO_oOhsbGQ1g7Ve87DIYw55FDVOSE5zD689CapYzofzIaGvT9LMmq3Vo80yoNbUsVVzIeknCf5c8rtjgZnZUGPt73BQnh4xqF=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczPioQE1N3ukKc4ImUdyNch_U9OHSHYGzideMTNKDCe-X_I3OdT_MjX3FIPD0K5d86WFbIL3k5w0hAS5Tgm5biuRRG8sWrUwkscm5FIf7aq6ymihP1wcRngTTJCfDsLVZTKVM5EjssozlhaDiacz2AbD=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczO_ynu0IPC-mzmc31Gtj8_8WG1nWd05RlQKCsWClLJb2EWgDwnhtJiNyVsEcdOvFSUS0nBiBxKBc5-TUX5PJQz8YXpUmpbEIHNrFWm7LLUdWxHqd710Md41vzIWBFBRsBvBzI9mcseO3Vhr_yw9u8fX=w1394-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczPaGupJo5GwFv9SLWAA-v556VRVl9FKLACLIrRmQZi8lnos6twbUZHqXNTxAQ4zFktzwryFjwTS5eW1gzFuyre3uyrg4et3B4rtbseYCR0zLiUSJaUJaxuf2lS6XVKt3115oxkh29-39JLLZiXxyjgL=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOd7grNClvAl-tqnz42wBXpiddDl1broEHRSykzTFa17Cv5juAIfDABFQCikjuoRWnh58n1ZQwW9-eKdpzvzEHREyrnVh2i0iWYwRw0MYOauNjK8CGLqFwqe1dS3_3DEJ7noNgLPE9BsCs0Tb2awgbs=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOQ0P2rY8aCJKlI_REdh2gpHLWHj0L4R6GSzLRY3UFKDypO2-fbBl3OaadqRlVTTlZQaMFgkvo4UGBw_QUMkcRc_0ZbvqQ8xYOcDmcXIJi42YhhAXlJQI-b4cILEUvsFqLJ7YHxLIz0kJ9F1bwj_F_r=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMpnu8DTFZuho3z9C6q4ArVcfzRaoe0iSFQ4Zf8BGskREbrh1Iel-mLzRJwPm9K-UuxRLPDv3kJIeM9SKB1KaRs5jlt1o_IQ6D0EpwqTQfAMjfABdlOpagnHk6krJjrNTe99Zv59AmNnY6GMZmP61a1=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMMuk7JoPrKWPV2coGb71L-gt1djMyTdP_NaQjYyby_ZvhKA5WTI8pVAgr-QM_NPapwKs16MRH5LHmfwece_GXLC-5MCBBP2NQjCfNdC33d88P68Wtd1plow03NayOK1GbaEyO2es6fl8nQ7jhkTDyY=w1394-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMZ5e82JzkzIotNpibFoM1vxjClDU_0s4KfYu7uN-uJ2s-fdnNx7ijE5uHWRkHMtRygzjcsTj886XWgw0ZRV1bNljSYSycCYNJsWegEUrZBK6spNPjnZvMEIdgoH2A62tPZzgMBdmQcXEsIxTvwm59e=w1394-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOT973vdSM2k9OhSQCEM3-SnGG56Z0zFbVAXCw1nWUfymeB8adz5u8gvWrXBHVE7e8yx9lyOTeKKZkVH8XE2-icegZJZAN-mSK-m5zYHdVgbS9mizZU5Jxg-5ZTcIh1lZafR2ntSbbM_akMZai0CmHo=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMz4h5HtnjIRE-KH_w7wmA8x91KWHtzEFHjKgePL00LaAUcy3pDkd194mPuQGyxkjR2BBqzK72DGMX1qbgX1oYJ76TAf6upsNgbDTg6fmRHI9A1EyjlVhQyFNHeYxlmWLt14EwSjyq3XcWYPcNR77UL=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczNsbbtD0Y3khTPTU9NiP6iup7fkB80csYsbB3Tt3XeXRqCZnjCuoKD1-Hsj5RYfSAUOUNKbsxhwD5IwJ0SRTRf8jJuCJLuIWAzyVuVvu_0FUYErjGl-yZXI9goVOLP_KoLyVmQphCqCxJbOOCPXbq8=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOWFhVOiGHMknPev8vQIAjxyGM7wIYiHoGbmP0tfPsIlnyeXbV2wO0Ls4niyHAddoRdsG1-mr6B3Db57WQ3RnphECK_Kffgi7EnkikW6SOH87ert67dDjVyBCfZGoopLwWzpchiR8zcZqpAkKaUYmpp=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczP-tNW92uazz6zHmzNV3ppIr_3SVLDdJ93PKqiJEm35FcNJ5mDuOBBTh2kz12AV5e-iVJKzszMcWXfI1QV-RXPI5KqsZAJ53fOQGuHcI9rI4ua1SHGf6-wAs1nT_dyaLYca5wnXUjvNo3pWwX7Wemtn=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczNEtgsO-6OgFE_f9RKanhUnQtdQxtZP7ZmlRNyBQlvGdrALsQDRwt_R6B2fW3ZXT-PegMR6QxtF0AVUWs9mwdNMV54KSGfFe7IbxeyKGjVFfKR2Ljx1BW3DnSC5ERfsaBQMwFxb8PjOuX2YE1jqDMXp=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczPsCziaoy1cFf55VYO9IQwx4t68aH7nw5CN8s1uyEvZDY_kveMaukBP_7iXuovsO_ZVwCaMEQVYu6cuhTwtIvT6J_Jza1dwsI7D87YIj971CZV6XvHIai_5IJcHIfqX1oWegYylVHNtLPjTHkfm_8_q=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczObc_k8VUvhlqz9GB7lF0VzF-ItlKuIIAa9zoWMCCkulzx-qQClTKAgOkFg97miKZ0oxyW1E_kd4DRslumTFBfnMqjnMUcsN_lw06wbkBQ5c2Dfeo8hJs_11Cv8ceB6e8REP6MyQ6WPLuYjtmK6EVm8=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMaI8GymHEHZoUbHNjeT0EugQbuKCbnX2UmHkw-h91y_50W6_oUoquG1ksCo7Bu5Y8l0Zlhk4XLJH6KQg5mDZ4h5X6TZsf6aTzz_9t3-qQ8xmQYlEWgBZvB1tyBFENuKhvm14AeeN8B1_BN0eXuTUg=w523-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOiG92u9iWkWUOy8wsCKyOc1O92U8Vig2fnnqSGgRJdivy05Fuo_B1Ba26PQ6UraCw3tjapnmhAo-HtBMTnFuBAO5EpOQA5sGDxldD3D3IwpLBBSSDsWP83xVAivh5448G9qsGjOX3YQ_JCbCDvDTpe=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczOAz9r8tN3B9XIJLuaFGIieuBZoqV6UILkblshWxCfTBNYjRh-C8lZk7GZi8BVjd1J7_VXWdzqMArjdNGojZN0ryE7dGLMZRc5TofpoI6r5_UZuOviMYLqGi4bRXqZq3dbKt6Ft8IlBJS3Qe0OH-bjG=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczMahSOJRsFTxvSuDckFOIkS94nbrBDkbVR1PrIKxteuOqzByU_zDEs8StCCPDLQZ-6qCXG4sfQHniqNOhF1pgr1i954JaxcxwBCUqkvft9ZAhw6TUTDf-Tarq-iYdM1S_W85Hm6BkdYsEYdCNA_lz_s=w619-h929-s-no-gm",
-    "https://lh3.googleusercontent.com/pw/AP1GczPBmkDJltKIom9_ZpNXJgZQzRM8W9rWSSLPH8hrgHG4N-4KsZf6qAYAZyt4AgcUj9ctO1IKsn4eML3t6D4yv3q8o6ZwmREqbn0QNkRieGmpKN8Sitmj7NzuF0Muq-1Vkt5bYXAxfcOXKItCQUNXl9pu=w619-h929-s-no-gm"
-
+      "https://lh3.googleusercontent.com/pw/AP1GczMEhEEb8tvKDeVjZYKY-ba545qcjyLUV9t5x61lRBRBjFsCmtCDUgnaI0jOvW5c8viZz5K4w0DLs-cPhIUiAKwV_Y5LJK4u_NEhcuI7f3_1C759qsLLfgYNLD2vi5D1a0Syrlwg7nJC0p7sz1I4wsXy=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczNl1Q0N-3RPDjUMorIdGz8XqwF29jJ2wk_O2bU23Wkc24KriTzC0FsFO_oOhsbGQ1g7Ve87DIYw55FDVOSE5zD689CapYzofzIaGvT9LMmq3Vo80yoNbUsVVzIeknCf5c8rtjgZnZUGPt73BQnh4xqF=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczPioQE1N3ukKc4ImUdyNch_U9OHSHYGzideMTNKDCe-X_I3OdT_MjX3FIPD0K5d86WFbIL3k5w0hAS5Tgm5biuRRG8sWrUwkscm5FIf7aq6ymihP1wcRngTTJCfDsLVZTKVM5EjssozlhaDiacz2AbD=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczO_ynu0IPC-mzmc31Gtj8_8WG1nWd05RlQKCsWClLJb2EWgDwnhtJiNyVsEcdOvFSUS0nBiBxKBc5-TUX5PJQz8YXpUmpbEIHNrFWm7LLUdWxHqd710Md41vzIWBFBRsBvBzI9mcseO3Vhr_yw9u8fX=w1394-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczPaGupJo5GwFv9SLWAA-v556VRVl9FKLACLIrRmQZi8lnos6twbUZHqXNTxAQ4zFktzwryFjwTS5eW1gzFuyre3uyrg4et3B4rtbseYCR0zLiUSJaUJaxuf2lS6XVKt3115oxkh29-39JLLZiXxyjgL=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOd7grNClvAl-tqnz42wBXpiddDl1broEHRSykzTFa17Cv5juAIfDABFQCikjuoRWnh58n1ZQwW9-eKdpzvzEHREyrnVh2i0iWYwRw0MYOauNjK8CGLqFwqe1dS3_3DEJ7noNgLPE9BsCs0Tb2awgbs=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOQ0P2rY8aCJKlI_REdh2gpHLWHj0L4R6GSzLRY3UFKDypO2-fbBl3OaadqRlVTTlZQaMFgkvo4UGBw_QUMkcRc_0ZbvqQ8xYOcDmcXIJi42YhhAXlJQI-b4cILEUvsFqLJ7YHxLIz0kJ9F1bwj_F_r=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMpnu8DTFZuho3z9C6q4ArVcfzRaoe0iSFQ4Zf8BGskREbrh1Iel-mLzRJwPm9K-UuxRLPDv3kJIeM9SKB1KaRs5jlt1o_IQ6D0EpwqTQfAMjfABdlOpagnHk6krJjrNTe99Zv59AmNnY6GMZmP61a1=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMMuk7JoPrKWPV2coGb71L-gt1djMyTdP_NaQjYyby_ZvhKA5WTI8pVAgr-QM_NPapwKs16MRH5LHmfwece_GXLC-5MCBBP2NQjCfNdC33d88P68Wtd1plow03NayOK1GbaEyO2es6fl8nQ7jhkTDyY=w1394-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMZ5e82JzkzIotNpibFoM1vxjClDU_0s4KfYu7uN-uJ2s-fdnNx7ijE5uHWRkHMtRygzjcsTj886XWgw0ZRV1bNljSYSycCYNJsWegEUrZBK6spNPjnZvMEIdgoH2A62tPZzgMBdmQcXEsIxTvwm59e=w1394-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOT973vdSM2k9OhSQCEM3-SnGG56Z0zFbVAXCw1nWUfymeB8adz5u8gvWrXBHVE7e8yx9lyOTeKKZkVH8XE2-icegZJZAN-mSK-m5zYHdVgbS9mizZU5Jxg-5ZTcIh1lZafR2ntSbbM_akMZai0CmHo=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMz4h5HtnjIRE-KH_w7wmA8x91KWHtzEFHjKgePL00LaAUcy3pDkd194mPuQGyxkjR2BBqzK72DGMX1qbgX1oYJ76TAf6upsNgbDTg6fmRHI9A1EyjlVhQyFNHeYxlmWLt14EwSjyq3XcWYPcNR77UL=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczNsbbtD0Y3khTPTU9NiP6iup7fkB80csYsbB3Tt3XeXRqCZnjCuoKD1-Hsj5RYfSAUOUNKbsxhwD5IwJ0SRTRf8jJuCJLuIWAzyVuVvu_0FUYErjGl-yZXI9goVOLP_KoLyVmQphCqCxJbOOCPXbq8=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOWFhVOiGHMknPev8vQIAjxyGM7wIYiHoGbmP0tfPsIlnyeXbV2wO0Ls4niyHAddoRdsG1-mr6B3Db57WQ3RnphECK_Kffgi7EnkikW6SOH87ert67dDjVyBCfZGoopLwWzpchiR8zcZqpAkKaUYmpp=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczP-tNW92uazz6zHmzNV3ppIr_3SVLDdJ93PKqiJEm35FcNJ5mDuOBBTh2kz12AV5e-iVJKzszMcWXfI1QV-RXPI5KqsZAJ53fOQGuHcI9rI4ua1SHGf6-wAs1nT_dyaLYca5wnXUjvNo3pWwX7Wemtn=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczNEtgsO-6OgFE_f9RKanhUnQtdQxtZP7ZmlRNyBQlvGdrALsQDRwt_R6B2fW3ZXT-PegMR6QxtF0AVUWs9mwdNMV54KSGfFe7IbxeyKGjVFfKR2Ljx1BW3DnSC5ERfsaBQMwFxb8PjOuX2YE1jqDMXp=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczPsCziaoy1cFf55VYO9IQwx4t68aH7nw5CN8s1uyEvZDY_kveMaukBP_7iXuovsO_ZVwCaMEQVYu6cuhTwtIvT6J_Jza1dwsI7D87YIj971CZV6XvHIai_5IJcHIfqX1oWegYylVHNtLPjTHkfm_8_q=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczObc_k8VUvhlqz9GB7lF0VzF-ItlKuIIAa9zoWMCCkulzx-qQClTKAgOkFg97miKZ0oxyW1E_kd4DRslumTFBfnMqjnMUcsN_lw06wbkBQ5c2Dfeo8hJs_11Cv8ceB6e8REP6MyQ6WPLuYjtmK6EVm8=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMaI8GymHEHZoUbHNjeT0EugQbuKCbnX2UmHkw-h91y_50W6_oUoquG1ksCo7Bu5Y8l0Zlhk4XLJH6KQg5mDZ4h5X6TZsf6aTzz_9t3-qQ8xmQYlEWgBZvB1tyBFENuKhvm14AeeN8B1_BN0eXuTUg=w523-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOiG92u9iWkWUOy8wsCKyOc1O92U8Vig2fnnqSGgRJdivy05Fuo_B1Ba26PQ6UraCw3tjapnmhAo-HtBMTnFuBAO5EpOQA5sGDxldD3D3IwpLBBSSDsWP83xVAivh5448G9qsGjOX3YQ_JCbCDvDTpe=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczOAz9r8tN3B9XIJLuaFGIieuBZoqV6UILkblshWxCfTBNYjRh-C8lZk7GZi8BVjd1J7_VXWdzqMArjdNGojZN0ryE7dGLMZRc5TofpoI6r5_UZuOviMYLqGi4bRXqZq3dbKt6Ft8IlBJS3Qe0OH-bjG=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczMahSOJRsFTxvSuDckFOIkS94nbrBDkbVR1PrIKxteuOqzByU_zDEs8StCCPDLQZ-6qCXG4sfQHniqNOhF1pgr1i954JaxcxwBCUqkvft9ZAhw6TUTDf-Tarq-iYdM1S_W85Hm6BkdYsEYdCNA_lz_s=w619-h929-s-no-gm",
+      "https://lh3.googleusercontent.com/pw/AP1GczPBmkDJltKIom9_ZpNXJgZQzRM8W9rWSSLPH8hrgHG4N-4KsZf6qAYAZyt4AgcUj9ctO1IKsn4eML3t6D4yv3q8o6ZwmREqbn0QNkRieGmpKN8Sitmj7NzuF0Muq-1Vkt5bYXAxfcOXKItCQUNXl9pu=w619-h929-s-no-gm"
     ]
+  },
+  "operationSystem": {
+    "ios": "ios",
+    "android": "android",
+    "windowsPhone": "windows phone",
+    "other": "other"
   }
 }
