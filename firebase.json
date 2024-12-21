@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "giaphuewedding",
     "public": "dist/tg-wedding-template/browser",
     "ignore": [
       "firebase.json",
