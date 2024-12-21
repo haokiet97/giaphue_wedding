@@ -12,11 +12,8 @@
               <h2 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">
                 {{i % 2 === 0 ? 'Lễ Thành Hôn' : 'Lễ Vu Quy'}}</h2>
             </div>
-            <button type="button"
-                    class="btn-play mx-auto"
-                    [attr.data-toggle]="'modal'"
-                    [attr.data-src]="videoUrl"
-                    [attr.data-target]="'#videoModal'">
+            <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                    data-target="#videoModal">
               <span></span>
             </button>
           </div>
@@ -47,6 +44,7 @@
         </button>
         <!-- 16:9 aspect ratio -->
         <div class="embed-responsive embed-responsive-16by9">
+          <input type="hidden" id="videoUrl" name="video_url" value="{{config?.carousel?.video}}">
           <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
         </div>
       </div>
