@@ -13,7 +13,7 @@
                 {{i % 2 === 0 ? 'Lễ Thành Hôn' : 'Lễ Vu Quy'}}</h2>
             </div>
             <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                    data-target="#videoModal">
+                    data-target="#videoModal" *ngIf="config?.carousel?.displayVideo">
               <span></span>
             </button>
           </div>

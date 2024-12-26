@@ -1,4 +1,4 @@
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgIf} from '@angular/common';
 import {Component, Input, SimpleChanges} from '@angular/core';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {WeddingConfig} from "../../../services/config.service";
@@ -14,7 +14,7 @@ export interface PhotosApi {
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, CarouselModule],
+  imports: [CommonModule, CarouselModule, NgIf],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
