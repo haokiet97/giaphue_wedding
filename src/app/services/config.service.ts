@@ -53,6 +53,7 @@ export interface WeddingConfig {
       landscapeUrl: string;
     }>;
     video: string;
+    displayVideo: boolean;
   };
   events: {
     quote: string;

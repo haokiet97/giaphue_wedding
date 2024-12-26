@@ -16,7 +16,7 @@
     <h1 class="font-secondary display-4 text-white">Album Ảnh Cưới</h1>
     <i class="far fa-heart text-white"></i>
   </div>
-  <div class="container mb-5 text-center">
+  <div class="container mb-5 text-center" *ngIf="config?.gallery?.maleAlbumUrl || config?.gallery?.femaleAlbumUrl">
     <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="{{config?.gallery?.maleAlbumUrl}}">
       <i class="fa fa-camera pr-1"></i> Album Nhà Trai
     </a>
