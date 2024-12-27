@@ -115,6 +115,10 @@ export interface WeddingConfig {
     femaleAlbumUrl: string;
     images: string[];
   };
+  musics: Array<{
+    path: string;
+    displayName: string;
+  }>;
 }
 
 
