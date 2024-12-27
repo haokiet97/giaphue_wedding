@@ -176,6 +176,68 @@
       "https://lh3.googleusercontent.com/pw/AP1GczPBmkDJltKIom9_ZpNXJgZQzRM8W9rWSSLPH8hrgHG4N-4KsZf6qAYAZyt4AgcUj9ctO1IKsn4eML3t6D4yv3q8o6ZwmREqbn0QNkRieGmpKN8Sitmj7NzuF0Muq-1Vkt5bYXAxfcOXKItCQUNXl9pu=w619-h929-s-no-gm"
     ]
   },
+  "musics": [
+      {
+        "path": "assets/music/ido.mp3",
+        "displayName": "I do"
+      },
+      {
+        "path": "assets/music/Beautiful In White.mp3",
+        "displayName": "Beautiful In White"
+      },
+      {
+        "path": "assets/music/Ngay Cuoi.mp3",
+        "displayName": "Ngày Cưới"
+      },
+      {
+        "path": "assets/music/Roi Toi Luon.mp3",
+        "displayName": "Rồi Tới Luôn"
+      },
+      {
+        "path": "assets/music/Mot Nha.mp3",
+        "displayName": "Một Nhà"
+      },
+      {
+        "path": "assets/music/Yeu Em Hon Moi Ngay.mp3",
+        "displayName": "Yêu Em Hơn Mỗi Ngày"
+      },
+      {
+        "path": "assets/music/Dam Cuoi Nhu Mo Remix.mp3",
+        "displayName": "Đám Cưới Như Mơ"
+      },
+      {
+        "path": "assets/music/Dam Cuoi Tren Duong Que Remix.mp3",
+        "displayName": "Đám cưới trên đường quê"
+      },
+      {
+        "path": "assets/music/Cuoi Nhau Di.mp3",
+        "displayName": "Cưới nhau đi"
+      },
+      {
+        "path": "assets/music/Nam Lay Tay Anh.mp3",
+        "displayName": "Nắm Lấy Tay Anh"
+      },
+      {
+        "path": "assets/music/Ngay Dau Tien.mp3",
+        "displayName": "Ngày Đầu Tiên"
+      },
+      {
+        "path": "assets/music/Lam Vo Anh Nhe.mp3",
+        "displayName": "Làm Vợ Anh Nhé"
+      },
+      {
+        "path": "assets/music/My Love.mp3",
+        "displayName": "My Love"
+      },
+      {
+        "path": "assets/music/Marry You.mp3",
+        "displayName": "Marry You"
+      },
+      {
+        "path": "assets/music/Ta La Cua Nhau.mp3",
+        "displayName": "Ta Là Của Nhau"
+      }
+    ],
   "operationSystem": {
     "ios": "ios",
     "android": "android",

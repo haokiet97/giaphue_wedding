@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import {WeddingConfig} from "../../../services/config.service";
 
 @Component({
     selector: 'app-music',
@@ -13,6 +14,7 @@ export class MusicComponent {
     audio: any;
     isAudioPlaying: boolean = false;
     songPlaying: any;
+  @Input() config!: WeddingConfig | null;
 
     constructor(private toastr: ToastrService) {
         this.audio = new Audio();
@@ -20,8 +22,9 @@ export class MusicComponent {
     }
 
     randomSong(): Object {
-        const randomIndex = Math.floor(Math.random() * SONG_LIST.length);
-        return SONG_LIST[randomIndex];
+        if(!this.config?.musics) return {};
+        const randomIndex = Math.floor(Math.random() * this.config?.musics?.length);
+        return this.config?.musics[randomIndex];
     }
 
     playMusic(): void {
@@ -31,7 +34,7 @@ export class MusicComponent {
             this.songPlaying = '';
         } else {
             let song: any = this.randomSong();
-            this.audio.src = `assets/music/${song.name}`;
+            this.audio.src = song.path;
             this.audio.load();
             this.audio.play();
             this.isAudioPlaying = true;
