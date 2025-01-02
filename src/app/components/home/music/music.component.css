@@ -16,3 +16,13 @@
     z-index: 11;
     /* animation: spin 2s infinite; */
 }
+
+.btn-money-dialog {
+    position: fixed;
+    display: inline;
+    text-align: center;
+    left: 30px;
+    bottom: 90px;
+    z-index: 11;
+    /* animation: spin 2s infinite; */
+}
