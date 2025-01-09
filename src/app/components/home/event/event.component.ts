@@ -139,7 +139,7 @@ export class EventComponent {
     if (gender === 'male') {
       mapLink = this.maleEventData.googleMapsLink;
     } else {
-      mapLink = this.maleEventData.googleMapsLink;
+      mapLink = this.femaleEventData.googleMapsLink;
     }
 
     window.open(mapLink);
