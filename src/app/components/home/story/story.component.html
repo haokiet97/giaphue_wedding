@@ -30,7 +30,7 @@
             <div *ngFor="let timeline of config?.story?.timelines; let i = index" class="row">
               <ng-container *ngIf="i % 2 === 0; else oddTemplate">
                 <div class="col-md-6 text-center text-md-right">
-                    <img class="img-fluid mr-md-3" src="{{timeline.image}}" alt="" />
+                    <img class="img-fluid mr-md-3" src="{{timeline.image}}" alt="" loading="lazy" />
                 </div>
                 <div class="col-md-6 text-center text-md-left">
                     <div
@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 text-center text-md-left">
-                  <img class="img-fluid ml-md-3" src="{{timeline.image}}" alt="" />
+                  <img class="img-fluid ml-md-3" src="{{timeline.image}}" alt="" loading="lazy" />
                 </div>
               </ng-template>
             </div>
