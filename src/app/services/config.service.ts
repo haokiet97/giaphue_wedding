@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import WEDDING_CONFIG from '../shared/wedding-config.json';
@@ -127,7 +127,9 @@ export interface WeddingConfig {
 })
 export class WeddingConfigService {
   // Public URL where your JSON is hosted (replace with your actual public JSON URL)
-  private configUrl = 'https://drive.google.com/uc?id=1U87yok1IXMvn5xhL07iPKzCj18JMvGvy';
+  // private configUrl = 'https://www.dropbox.com/scl/fi/ik1xg9xl9r14e36lro5fe/wedding-config.json?rlkey=64keyl1xm54yyf0fioe3kp83x&st=efyq4lit&raw=1';
+  // private configUrl = 'https://uc08428e09fb5510ec15c8db9779.dl.dropboxusercontent.com/cd/0/inline/CkjY7XKOI_YDQ7CPhnYxfzZwPBWl1yFhmZDdxtB4rKSJaErTETCGGCwYLvmvw-6bRtcu0krS4joR-eJ91_EUPEHBHU3EScZgSsXWOXRqYSXzNFqhHx0G_2PS5tp2L4F23zli0ttIT3DtQYzRDxDj9R9-/file#';
+  private configUrl = 'https://raw.githubusercontent.com/haokiet97/giaphue_wedding/refs/heads/dev.config/src/app/shared/wedding-config.json';
 
   // BehaviorSubject to store and stream the configuration
   private configSubject = new BehaviorSubject<WeddingConfig | null>(null);
@@ -142,11 +144,26 @@ export class WeddingConfigService {
 
   // Method to load configuration from remote JSON
   public loadConfig(): void {
-    this.http.get<WeddingConfig>(this.configUrl).pipe(
-      tap(config => {
-        this.configSubject.next(config ?? WEDDING_CONFIG);
+    this.http.get<WeddingConfig>(this.configUrl, { observe: 'response' }).pipe(
+      tap(response  => {
+        // this.configSubject.next(config ?? WEDDING_CONFIG);
+
+        if (response.status === 302) {
+          const redirectUrl = response.headers.get('Location');
+          if (redirectUrl) {
+            console.log(redirectUrl);
+            this.configUrl = redirectUrl;
+            this.loadConfig(); // Call loadConfig again with the new URL
+          } else {
+            console.error('Redirect URL not found');
+          }
+        } else {
+          console.log('read from github');
+          this.configSubject.next(response.body ?? WEDDING_CONFIG);
+        }
       }),
       catchError(error => {
+        console.log('error. load from local');
         this.configSubject.next(this.configSubject.value ?? WEDDING_CONFIG);
         return of(null);
       })
